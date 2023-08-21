@@ -23,9 +23,6 @@ theme:
         icon: material/toggle-switch
         name: 切换至日间模式
       accent: lime
-  icon:
-    admonition:
-      <type>: <icon> 
 
 
 extra:
