@@ -24,7 +24,6 @@ theme:
         name: 切换至日间模式
       accent: lime
 
-
 extra:
   social:
     - icon: fontawesome/brands/github-alt
@@ -46,16 +45,13 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-    - pymdownx.arithmatex:
-      generic: true
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
 
 copyright: Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
-
 
 extra_javascript:
   - javascripts/mathjax.js
