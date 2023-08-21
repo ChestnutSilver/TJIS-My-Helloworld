@@ -51,6 +51,9 @@ copyright: Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 extra_javascript:
   - javascripts/mathjax.js
