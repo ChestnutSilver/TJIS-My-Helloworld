@@ -46,19 +46,15 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
-copyright: Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
-
-markdown_extensions:
-  - pymdownx.arithmatex:
+    - pymdownx.arithmatex:
       generic: true
-  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true 
-  - pymdownx.tabbed:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+
+copyright: Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
 
 
 extra_javascript:
