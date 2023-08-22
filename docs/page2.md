@@ -53,7 +53,7 @@ def bubble_sort(items):
                 items[j], items[j + 1] = items[j + 1], items[j]
 ```
 
-!!! exampl
+!!! example "Read anch link"
 
     === "Unordered List"
 
