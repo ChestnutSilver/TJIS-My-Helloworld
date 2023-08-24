@@ -74,3 +74,25 @@ def bubble_sort(items):
 !!! note
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+<table>
+<capital>如何在Markdown里面画这样的表格：</capital>
+<tr>
+<th>普通表头</th>
+<th align="right"><i>斜体表头而且居右</th>
+<th colspan=2>表头横向合并单元格</th>
+</tr>
+<tr>
+<th>左边也可以有表头</th>
+<td bgcolor=#ffffcc>涂个颜色</td>
+<td><mark>高亮文本</mark>但不全高亮</td>
+<td><b>有时候加粗</b><i>有时候斜体</i></td>
+</tr>
+<tr>
+<td>表头不一定是一整行或者一整列的</td>
+<td rowspan=2>纵向合并单元格要注意<br>下一行少一个单元格<br>字太多必要时我会换行</td>
+<td rowspan=2 colspan=2>单元格也可以从两个方向合并</td>
+</tr>
+<td align="left"> 简单做个居左 </td>
+</tr>
+</table>
