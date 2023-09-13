@@ -1,0 +1,48 @@
+/* 设置页面背景色和主色调 */
+body {
+	background-color: #f7f7f7;
+	font-family: Arial, sans-serif;
+} /*
+导航栏样式 */
+nav ul {
+	list-style: none;
+	background-color: #e10019;
+	padding: 10px;
+	text-align: center;
+}
+nav ul li {
+	display: inline;
+	margin: 0 20px;
+}
+nav ul li a {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+} /* 主要内容区域样式 */
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+}
+.left-content {
+	width: 70%;
+	background-color: #fff;
+	padding: 20px;
+}
+.left-content h2 {
+	color: #e10019;
+}
+.right-content {
+	width: 25%;
+	background-color: #fff;
+	padding: 20px;
+}
+.right-content h2 {
+	color: #e10019;
+} /* 底部样式 */
+footer {
+	background-color: #e10019;
+	color: #fff;
+	text-align: center;
+	padding: 10px;
+}
