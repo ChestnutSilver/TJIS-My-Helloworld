@@ -1,0 +1,993 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/">
+      
+      
+        <link rel="next" href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>计算机取证 - TJIS My Helloworld</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="TJIS My Helloworld" class="md-header__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TJIS My Helloworld
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              计算机取证
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to My Helloworld
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../page2/" class="md-tabs__link">
+        
+  
+    
+  
+  Page test
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全原理
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全数学基础
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-tabs__link">
+        
+  
+    
+  
+  机器学习理论与应用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-tabs__link">
+        
+  
+    
+  
+  脑认知与智能计算
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  计算机取证
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+          
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TJIS My Helloworld" class="md-nav__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TJIS My Helloworld
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to My Helloworld
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全数学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习理论与应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脑认知与智能计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    计算机取证
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    计算机取证
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1-forensics-intro" class="md-nav__link">
+    Chapter 1. 概述 Forensics-Intro
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 1. 概述 Forensics-Intro">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 课程简介
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 电信网络诈骗
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 数字证据
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 取证的历史发展过程
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 计算机取证
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2-forensics-boot" class="md-nav__link">
+    Chapter 2. 概述 Forensics-boot
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2. 概述 Forensics-boot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cpu" class="md-nav__link">
+    1. CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-bios" class="md-nav__link">
+    2. BIOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8. 集成学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">计算机取证</h1>
+<hr />
+<div class="admonition danger">
+<p class="admonition-title">正在更新……</p>
+<p>本笔记随课更新。</p>
+<p>2023-2024学年度秋季学期。</p>
+</div>
+<hr />
+<h2 id="chapter-1-forensics-intro">Chapter 1. 概述 Forensics-Intro</h2>
+<h3 id="1">1. 课程简介</h3>
+<p>一门需要<strong>动手</strong>的课程。</p>
+<p>需要综合的计算机知识：计算机硬件、计算机操作系统、计算机网络等。</p>
+<p>成绩：14% 出勤 + 56% 实验（期末答辩） + 30% 期末报告。</p>
+<p>如果操作不当，你可能会因此<strong>破坏</strong>电脑硬盘，因此需要谨慎和仔细一些，带几个 U 盘，并且安装 WinHex 等磁盘工具。</p>
+<p>不过没关系，毕竟软件没了也是可以重新装的！旧的不去新的不来（？）</p>
+<h3 id="2">2. 电信网络诈骗</h3>
+<p>一个<strong>电信网络诈骗</strong>案，侵犯公民个人信息的电信诈骗犯罪事件。</p>
+<details class="question">
+<summary>关于 2016 年徐玉玉案</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="被骗经过" name="__tabbed_1" type="radio" /><input id="判决结果" name="__tabbed_1" type="radio" /><input id="电信网络诈骗态势" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="被骗经过">被骗经过</label><label for="判决结果">判决结果</label><label for="电信网络诈骗态势">电信网络诈骗态势</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>2016年高考，徐玉玉以568分的成绩被南京邮电大学录取。19日下午4点30分左右，她接到了一通陌生电话，对方声称有一笔2600元助学金要发放给她。在这通陌生电话之前，徐玉玉曾接到过教育部门发放助学金的通知。“18日，女儿接到了教育部门的电话，让她办理了助学金的相关手续，说钱过几天就能发下来。”徐玉玉的母亲李自云告诉记者，<strong>由于前一天接到的教育部门电话是真的</strong>，所以当时他们并没有怀疑这个电话的真伪。</p>
+<p><strong>正是这种时间衔接的紧凑性，使得人们很容易降低警惕，轻信通过盗取个人信息进行诈骗的犯罪分子。</strong></p>
+<p>按照对方要求，徐玉玉将准备交学费的9900元打入了骗子提供的账号。</p>
+<p>发现被骗后，徐玉玉万分难过，当晚就和家人去派出所报了案。</p>
+<p>让徐连彬觉得倍感后悔的是，自己最后向民警询问“钱还能不能追回来”，民警回答“会尽力但是可能性不大”。徐连彬认为，可能是这个问题刺激到了本已非常自责的徐玉玉。</p>
+<p>在回家的路上，徐玉玉突然晕厥，不省人事，虽经医院全力抢救，但仍没能挽回她18岁的生命。</p>
+</div>
+<div class="tabbed-block">
+<p>2017年7月19日上午，山东省临沂市中级人民法院对被告人陈文辉、郑金锋、黄进春、熊超、陈宝生、郑贤聪、陈福地<strong>诈骗、侵犯公民个人信息</strong>案一审公开宣判。</p>
+</div>
+<div class="tabbed-block">
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzIzMDQyMTk5OA==&amp;mid=2247496328&amp;idx=2&amp;sn=c05df93d6620dca22028298ead24bbe8&amp;chksm=e8b11609dfc69f1f31e0e838a63dc577664ee8c51c991a69117f83e4f9cba5c2b02893719868&amp;scene=27">中国移动：2022年电信网络诈骗态势分析报告</a>.</p>
+<p>缅北地区：<a href="https://baijiahao.baidu.com/s?id=1776440115309717112&amp;wfr=spider&amp;for=pc">环球时报：重大战果！1207名缅北电诈嫌疑人移交我方</a>.</p>
+</div>
+</div>
+</div>
+</details>
+<h3 id="3">3. 数字证据</h3>
+<p>要想对犯罪分子进行调查，就要进行<strong>取证</strong>。其中，<strong>数字证据</strong>（Digital Evidence）也是重要的信息。</p>
+<p>数字证据的来源是<strong>非常多样</strong>的，比如计算机系统（本地硬盘的存储文件，就比如一个文件的文件名、创建时间，都可以提供大量的信息）、通信系统（比如一个邮件的发送过程，就可以在服务器上存储着发送者的 ip 地址信息）、嵌入式系统（短信、微信、公交卡、可能提供行动轨迹的导航系统、公共监控系统）等。</p>
+<p>证据特性：</p>
+<ul>
+<li>证据应当具有证明力和证明能力。</li>
+<li>具体表现为客观性、关联性和合法性。</li>
+<li><strong>客观性</strong>是证据的本质特征，它要求证据必须是客观存在的事实材料，而不是主管猜测或臆想的东西。首先它的本质是事实，一种是诸如物品、痕迹、文件等客观存在的物质；一种是被人们感知并存入记忆的事实（目击证人）。</li>
+<li><strong>关联性</strong>是指证据必须与待证事实有内在和必然的联系。</li>
+<li><strong>合法性</strong>是指证据的收集与提供应当依照法定程序。</li>
+</ul>
+<details class="question">
+<summary>证据特性的拓展故事</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="客观性" name="__tabbed_2" type="radio" /><input id="关联性" name="__tabbed_2" type="radio" /><input id="合法性" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="客观性">客观性</label><label for="关联性">关联性</label><label for="合法性">合法性</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<blockquote>
+<p>记忆的选择性与偏差：亲眼见到的，并不一定就是事实[1]。</p>
+</blockquote>
+<p>人们常说，耳听为虚，眼见为实，但心理学家经过研究发现：人的记忆也会有犯错误的时候，人们常常会通过一定的方式来解释自己经历过的人或事，并很难区分实际发生的事与经过自己推理而觉得理所当然的事。特别是当发生某件事情，许多目击者被同时询问时，总是有一个人占据主导地位，他的记忆会影响甚至推翻另一个性格较弱者的记忆，由于目击者记忆内容的差异会让性格较弱者产生自我怀疑，从而破坏其信心，进而怀疑自己的记忆能力。有时，这种记忆扭曲的现象会导致很严重的后果。</p>
+<p>在1977年，美国就曾经发生过这样一起事件：美国联邦法庭指证威廉〃杰克逊犯有强奸罪，法庭的依据是当事人的证词。虽然威廉〃杰克逊再三声称自己冤枉，但在当事人非常肯定的指认下，罪名成立了。5年后，真正的罪犯爱德华〃杰克逊落网了，他和受冤枉者同姓，相貌也很相似，结果酿成了这起冤案。</p>
+<p>[1]
+作者：路人甲的自我修养
+链接：https://www.zhihu.com/question/323086170/answer/674276719
+来源：知乎</p>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>“他们就是打算就我没有做过的事把我处决……他们需要做的只是检验那支枪。但是，当你自认为有权有势、可以凌驾于法律之上，你就对普通人不屑一顾。但是，我要告诉每一个让我沦为死囚的人：人在做，天在看。”——安东尼·雷·欣顿</p>
+</blockquote>
+<p>1985年，亚拉巴马州伯明翰市发生快餐店持枪抢劫案，两名餐厅经理遭枪杀。警方当时没有找到目击证人和指纹证据。稍后发生另一起餐馆持枪抢劫案，一名受害人指认欣顿为嫌疑人。[2]</p>
+<p>警方在欣顿家中发现一支9毫米口径转轮手枪，枪主为欣顿的母亲。<strong>经过证物鉴定，检方得出结论，上述案件中发射的6发子弹都出自这支手枪，从而认定欣顿为凶手。</strong>（此例中，关联性不是客观的）。</p>
+<p>庭审过程中，欣顿提出不在场证据，说后一起劫案发生时，他正在距离罪案现场数十公里外的地方上班，而且有同事为他作证。不过，他的不在场证据未获采信。</p>
+<p>1986年，法庭认定欣顿谋杀罪名成立，判处他死刑。</p>
+<p>欣顿提出上诉。去年，美国最高法院认定，案件审理过程中，欣顿未获得充分辩护，因而必须重审。再次鉴定证据后，亚拉巴马州检方本月1日认定证据不足，决定撤诉。2日，杰斐逊县巡回法院法官下令释放欣顿。</p>
+<p>[2]
+作者：惠晓霜
+链接：https://world.huanqiu.com/article/9CaKrnJJB0W
+来源：新闻晨报</p>
+</div>
+<div class="tabbed-block">
+<blockquote>
+<p>“女子还活着，只要你说了，就可以出去了。”——诱供片段</p>
+</blockquote>
+<p>呼格吉勒图案又称呼格吉勒图冤杀案，是一起在中国引起了广泛关注的冤案。</p>
+<p>1996年4月9日，在呼和浩特第一毛纺厂家属区公共厕所内，一女子被强奸杀害（4·9毛纺厂女厕女尸案）。公安机关认定报案人<strong>呼格吉勒图</strong>是凶手。1996年4月10日凌晨0点，警察开始殴打呼格吉勒图，进行逼供。</p>
+<p><strong>呼格无奈招供。</strong></p>
+<p>5月23日，呼格吉勒图被判死刑，剥夺政治权利终身。呼格吉勒图不服，提出上诉。6月5日，内蒙古自治区高级人民法院驳回上诉，维持原判。1996年6月10日，呼格吉勒图被执行死刑。</p>
+<p>2005年10月23日，<strong>赵志红</strong>承认在第一毛纺厂家属区公共厕所内杀害了一名女性。2006年，内蒙古司法机构组织了专门的调查组复核此案。2007年1月1日，赵志红的死刑被临时叫停。</p>
+<p>2014年11月20日，呼格吉勒图案进入再审程序。12月15日，内蒙古自治区高级人民法院对再审判决宣告原审被告人呼格吉勒图无罪，之后启动追责程序和国家赔偿。12月30日，内蒙古高院依法作出国家赔偿决定，决定支付李三仁、尚爱云国家赔偿金共计2059621.40元。</p>
+<p>2019年7月30日，内蒙古自治区呼和浩特市中级人民法院遵照最高人民法院院长签发的执行死刑命令，对罪犯赵志红执行死刑。最高人民法院刑五庭负责人就赵志红死刑复核一案答记者问称，证据不足，不予确定。</p>
+<p>终判内容：再审判决主要内容：一、撤销内蒙古高级人民法院（1996）内刑终字第199号刑事裁定和呼和浩特市中级人民法院（1996）呼刑初字第37号刑事判决；二、<strong>原审被告人呼格吉勒图无罪</strong>。</p>
+<p>此例的关键问题在于，当时警方的急功冒进及<strong>刑讯逼供</strong>，案件发生时全国正处于严打时期，致使警方急功冒进（破坏了取得证据的<strong>合法性</strong>）。</p>
+</div>
+</div>
+</div>
+</details>
+<p>数字证据特性：</p>
+<ul>
+<li>无形性：计算机证据<strong>不是肉眼直接可见</strong>的，必须借助适当的工具。</li>
+<li>易复制性：数字证据通常可以被精确地<strong>复制</strong>，副本和原本具有高度的一致性。</li>
+<li>大量性、多样性：数字证据往往杂乱地<strong>混杂于大量的数字信息</strong>中。</li>
+<li>脆弱性：搜集证据可能会对证据造成<strong>修改</strong>（打开文件）；犯罪分子故意修改或者删除数字证据。</li>
+</ul>
+<h3 id="4">4. 取证的历史发展过程</h3>
+<blockquote>
+<p>取证的过程也是和人类发展历史相一致的过程。</p>
+</blockquote>
+<p>取证历史发展的几个阶段：</p>
+<ul>
+<li>神证阶段：利用<strong>神</strong>来帮助查明案情和裁决。
+  利用人们对<strong>神的力量的敬畏</strong>，解决了无法判定原告和被告陈述真假的问题，不敢宣誓者、或宣誓中慌乱的即为假。
+  双方都敢于向神宣誓，就使用<strong>神判法</strong>。</li>
+<li>人证阶段：利用证人、当事人、特别是被告人的口供来审案。</li>
+<li>物证阶段：利用能够证明案件真实情况的一切<strong>物品痕迹</strong>来进行审案。（是随着人类科技的发展而产生的）</li>
+</ul>
+<p>审讯问案法：</p>
+<ul>
+<li>为了防止过度逼供，唐朝法律规定对同一名囚犯实施拷讯不超过三次，拷打总数不超过二百。</li>
+<li>南宋郑克反对酷刑拷打，继承了“以五声听狱讼”之法，认为问案时要注意分析事务的情理。</li>
+<li>缺点就是促进了刑讯逼供的发展。（宋朝时出现了十分残酷的刑讯手段）</li>
+<li>请君入瓮的故事：</li>
+<li>刑讯逼供专家：武则天两个酷吏，周兴和来俊臣的故事。</li>
+</ul>
+<h3 id="5">5. 计算机取证</h3>
+<p>计算机在犯罪中的三种角色：</p>
+<ul>
+<li>黑客入侵的目标</li>
+<li>作案的工具</li>
+<li>犯罪信息的存储器</li>
+</ul>
+<p>计算机取证方法：</p>
+<ol>
+<li>来源取证：确定犯罪嫌疑人或者证据的来源</li>
+<li>IP 地址取证：确定与犯罪相关的 IP 地址信息</li>
+<li>事实取证：取得与证明案件事实相关的证据</li>
+<li>文件内容调查：在存储设备中取得文本、图片、音频视频、网页、电子邮件等的相关文件的内容。包括这些文件被删除以后、文件系统被格式化后或者数据恢复以后的文件内容。</li>
+<li>使用痕迹调查：windows 运行的痕迹、上网记录的调查、Office、realplay 和 mediaplay 的播放列表及其它应用软件使用历史记录。</li>
+<li>软件功能分析：主要针对特定软件和程序的性质和功能进行分析，常见是对恶意代码的分析，确定其破坏性、传染性等特征。</li>
+<li>软件相似性分析：比较两软件，找出两者之间是否存在实质性相似的证据。此类取证方法主要在软件知识产权相关案件中使用。</li>
+<li>日志文件分析。</li>
+<li>网络数据包分析：通过分析网络中传输的数据包发现相关证据的过程。</li>
+</ol>
+<p>计算机取证重要原则：</p>
+<ul>
+<li>尽早取证</li>
+<li>保证数据完整性（要在备份数据上进行分析，不要在原数据上分析）</li>
+<li>取证过程必须收到监督</li>
+<li>记录每一个取证过程和原因</li>
+</ul>
+<p>计算机取证过程：</p>
+<ol>
+<li>准备阶段
+   调查前，准备好所需设备和工具（大容量磁盘驱动器、电缆、引导盘、笔记本电脑、照相机等）引导盘的作用：防止电脑启动导致的日志文件等的产生。</li>
+<li>收集和保存</li>
+<li>搜索和定位计算机证据，制定保护和调查计划；确定计算机型号等；</li>
+<li>保护和评估现场；</li>
+<li>对现场记录、归档；</li>
+<li>证据提取。</li>
+<li>检验和分析</li>
+<li>搜索目标系统：包括现存的正常文件，已经被删除但仍存在于磁盘上的文件（尽量恢复），隐藏文件，受到密码保护的文件和加密文件（破解密码）、临时文件和交换文件（查看：页面交换文件 pagefile.sys）；</li>
+<li><img alt="Alt text" src="https://github.com/ChestnutSilver/TJIS-My-Helloworld/blob/main/pics/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/1.png" /></li>
+<li><img alt="Alt text" src="https://github.com/ChestnutSilver/TJIS-My-Helloworld/blob/main/pics/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/2.png" /></li>
+<li>其他区域数据：所谓的未分配的磁盘空间（查看：用磁盘管理器）；文件中的“slack”空间（查看：打开任何一个文件）。</li>
+<li>提交报告：对案件的分析检验结果汇总提交。</li>
+</ol>
+<h2 id="chapter-2-forensics-boot">Chapter 2. 概述 Forensics-boot</h2>
+<h3 id="1-cpu">1. CPU</h3>
+<p>CISC/RISC/EPIC 复杂、简单、并行指令集：</p>
+<ol>
+<li>CISC：X86、X64。</li>
+<li>RISC：IBM 的 John Cocke、加州大学的 David Patterson。
+   主要用于服务器，并发提高速度；嵌入式设备；RISC-V、LoongArch（龙芯中科）。</li>
+<li>EPIC：Intel IA-64，并不兼容 X86。</li>
+</ol>
+<h3 id="2-bios">2. BIOS</h3>
+<p>BIOS 程序储存位置：</p>
+<ol>
+<li>ROM：需要烧制写入；</li>
+<li>EPROM：有一个窗口供紫外线擦除和写入；</li>
+<li>EEPROM：写入需设置跳线开关；</li>
+<li>NOR-Flash：可以 Flash 内运行代码；后来东芝开发了储存量更大的 NAND-Flash。</li>
+</ol>
+<p>Nor Flash 厂商。</p>
+<p>计算机系统启动流程：</p>
+<ol>
+<li>计算机系统启动：计算机硬件启动、计算机操作系统启动；</li>
+<li>有两种主要方式：BIOS、EFI(UEFI)BIOS；</li>
+<li>启动主要厂商：Award、phoenix、AMI。</li>
+</ol>
+<p>现在主流是 UEFI 方式，但支持 BIOS 方式，可以在启动时候设置。</p>
+<p>win10 启动流程(BIOS)：计算机硬件启动、从 MBR 寻找硬盘活动分区、从活动分区的 PBR 找该分区 Bootmgr、该分区的/boot/BCD 文件、……</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ChestnutSilver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

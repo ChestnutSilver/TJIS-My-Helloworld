@@ -1,0 +1,2278 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/">
+      
+      
+        <link rel="next" href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>Chapter 8. 集成学习 - TJIS My Helloworld</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-8" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="TJIS My Helloworld" class="md-header__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TJIS My Helloworld
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 8. 集成学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to My Helloworld
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../page2/" class="md-tabs__link">
+        
+  
+    
+  
+  Page test
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全原理
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全数学基础
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-tabs__link">
+        
+  
+    
+  
+  机器学习理论与应用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-tabs__link">
+        
+  
+    
+  
+  脑认知与智能计算
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-tabs__link">
+        
+  
+    
+  
+  计算机取证
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TJIS My Helloworld" class="md-nav__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TJIS My Helloworld
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to My Helloworld
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全数学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习理论与应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脑认知与智能计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机取证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 8. 集成学习
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8. 集成学习
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-8" class="md-nav__link">
+    Chapter 8. 集成学习
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 8. 集成学习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 个体与集成
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-boosting-adaboost" class="md-nav__link">
+    2. Boosting - AdaBoost
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Boosting - AdaBoost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 工作机制
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 算法原理
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 算法原理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    2.2.1 核心思想
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    2.2.2 分类情景介绍
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223" class="md-nav__link">
+    2.2.3 使用“指数损失函数”的正确性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224" class="md-nav__link">
+    2.2.4 分类器权重公式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#225" class="md-nav__link">
+    2.2.5 样本分布更新公式
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 算法流程
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 算法流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1 算法描述
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2 算法各步骤含义
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24" class="md-nav__link">
+    2.4 具体算例
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 具体算例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241" class="md-nav__link">
+    2.4.1 给定数据集与基学习算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-1-2" class="md-nav__link">
+    2.4.2 算法步骤1-2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-3a-7a-1" class="md-nav__link">
+    2.4.3 算法步骤3a-7a（第 1 轮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#244-3b-7b-2" class="md-nav__link">
+    2.4.4 算法步骤3b-7b（第 2 轮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#245-3c-7c-3" class="md-nav__link">
+    2.4.5 算法步骤3c-7c（第 3 轮）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#246-8" class="md-nav__link">
+    2.4.6 算法步骤8
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25" class="md-nav__link">
+    2.5 代码实现
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26" class="md-nav__link">
+    2.6 算法分析
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6 算法分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261" class="md-nav__link">
+    2.6.1 主要优点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262" class="md-nav__link">
+    2.6.2 主要缺点
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27" class="md-nav__link">
+    2.7 常用技巧
+  </a>
+  
+    <nav class="md-nav" aria-label="2.7 常用技巧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#271-shrinkage" class="md-nav__link">
+    2.7.1 特征缩减技术（Shrinkage）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#272-early-stopping" class="md-nav__link">
+    2.7.2 早停法（Early Stopping）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#273-weight-trimming" class="md-nav__link">
+    2.7.3 权值修整（Weight Trimming）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#28" class="md-nav__link">
+    2.8 参考文献
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Chapter 8. 集成学习</h1>
+
+<h2 id="chapter-8">Chapter 8. 集成学习</h2>
+<blockquote>
+<p><strong>本节简介：</strong>AdaBoost 算法的具体原理（公式推导）、算法流程、运算实例、代码实现。</p>
+<p><strong>个人简介：</strong>同济大学 2020级 本科生；邮箱：2053182@tongji.edu.cn</p>
+<p><strong>笔记和代码，可在：</strong>https://github.com/ChestnutSilver/Machine-Learning-Notes/tree/main/AdaBoost</p>
+</blockquote>
+<h3 id="1">1. 个体与集成</h3>
+<p>集成学习（ensemble learning）通过构建并结合多个学习器来完成学习任务。</p>
+<p>它的<strong>一般结构</strong>是：先产生一组“个体学习器”，再用某种策略将它们<strong>结合</strong>起来。个体学习器通常由一个现有的学习算法从训练数据产生，这样的集成是<strong>“同质”</strong>的，同质集成中的个体学习器亦称“基学习器”；集成也可以包含不同类型的个体学习器，这样的集成是<strong>“异质”</strong>的，异质集成中的个体学习器由不同的学习算法生成，常称为“组件学习器”或直接称为个体学习器。</p>
+<p>集成学习通过将多个学习器进行结合，常可获得比单一学习器显著优越的泛化性能，这对<strong>“弱学习器”</strong>（weak learner）尤为明显，因此集成学习的很多理论都是针对弱学习器进行的。这里，弱学习器常指泛化性能略优于随机猜测的学习器。</p>
+<blockquote>
+<p>“三个臭皮匠，赛过诸葛亮。”</p>
+</blockquote>
+<p>要想获得好的集成，个体学习器应“<strong>好而不同”</strong>，即个体学习器要有“准确性”和“多样性”。事实上，如何产生并结合“好而不同”的学习器，是集成学习研究的核心。</p>
+<p>根据个体学习器的<strong>生成方式</strong>，目前的集成学习方法大致可分为两大类，即：</p>
+<p>① 个体学习器之间存在强依赖关系、必须串行生成的<strong>序列化</strong>方法，例如 Boosting（AdaBoost、GDBT、XGBoost、LightGBM 等）；</p>
+<p>② 个体学习器之间不存在强依赖关系、可同时生成的<strong>并行化</strong>方法，例如 Bagging 和随机森林（Random Forest）。</p>
+<h3 id="2-boosting-adaboost">2. Boosting - AdaBoost</h3>
+<h4 id="21">2.1 工作机制</h4>
+<p>Boosting 是一族可将弱学习器提升为强学习器的算法。这族算法的<strong>工作机制</strong>类似：先从初始训练集训练出一个基学习器，再根据基学习器的表现对训练样本分布进行调整，使得先前学习器做错的训练样本在后续受到更多关注，然后基于调整后的样本分布来训练下一个基学习器；如此重复进行，直至基学习器的数目达到实现制定的值 <span class="arithmatex">\(T\)</span>，最终将这 <span class="arithmatex">\(T\)</span> 个基学习器进行加权结合。</p>
+<p>Boosting 族算法最著名的代表是 AdaBoost，在这一节（Chapter 8 - 第 2 节）中，我们只介绍 AdaBoost 算法。</p>
+<h4 id="22">2.2 算法原理</h4>
+<h5 id="221">2.2.1 核心思想</h5>
+<p><strong>需要解决的问题：</strong></p>
+<p>①在每一轮训练中，如何对训练样本的权值分布进行调整？</p>
+<p>②如何确定各个基学习器“加权”结合的权重？</p>
+<p><strong>AdaBoost 的解决思路：</strong></p>
+<p>通过 <strong>分类器权重公式</strong> 来确定 各个基学习器的权重；通过 <strong>样本分布更新公式</strong> 来确定 各轮训练中的样本分布。</p>
+<blockquote>
+<p>①在确定<strong>各个基学习器的权重</strong>时：</p>
+<p>加大“分类误差率”小的弱分类器的权值，使其在表决中发挥较大作用；减小“分类误差率”大的弱分类器的权值，使其在表决中发挥较小作用。（直观而言：比较“菜”的学习器，权重应该小一些；比较“好”的学习器，权重应该大一些。）</p>
+<p>②在确定<strong>各轮训练中的样本分布</strong>时：</p>
+<p>提高那些被前一轮弱分类器错误分类样本的权值，降低那些被正确分类的样本的权值。（例如，假设我们在第 K 次得到的弱学习器，在某个样本上的分类结果出现错误，那么我们自然希望：第 K+1 次产生的弱学习器应该<strong>更加关注这个样本</strong>，使其尽可能地划分正确。）</p>
+</blockquote>
+<h5 id="222">2.2.2 分类情景介绍</h5>
+<p>下面我们从公式的角度推导 AdaBoost 的算法原理。为了防止公式混乱，我们给公式添加与《机器学习（周志华）》相同的编号；没有编号的公式是我们的推导过程。</p>
+<p>AdaBoost 算法的训练目标是：<strong>基于“加性模型”，最小化指数损失函数</strong>。</p>
+<p>注意，我们在这里讨论的是二分类问题，其中训练样本集的 <span class="arithmatex">\(y_i\in\{-1,+1\}\)</span>，<span class="arithmatex">\(f\)</span> 是真实函数。对于样本 <span class="arithmatex">\(x\)</span> 来说，真实值 <span class="arithmatex">\(f(x)\in\{-1,+1\}\)</span>，每个基学习器的预测值 <span class="arithmatex">\(h_i(x)\in\{-1,+1\}\)</span>，假定基分类器的错误率为 <span class="arithmatex">\(\epsilon\)</span>，即对每个基分类器 <span class="arithmatex">\(h_i\)</span> 有：
+$$
+P(h_i(x)\neq f(x))=\epsilon \tag{8.1}
+$$
+假设集成通过简单投票法结合 <span class="arithmatex">\(T\)</span> 个基分类器，若有超过半数的基分类器正确，则集成分类就正确；集成分类的结果 <span class="arithmatex">\(F_{简单投票}(x)\)</span> 为：
+$$
+F_{简单投票}(x)=\mathrm{sign}\Big(\sum\limits_{i=1}^{T}h_i(x)\Big) \tag{8.2}
+$$
+<strong>“加性模型”</strong>（additive model），即基学习器的线性组合 <span class="arithmatex">\(H(x)\)</span>：
+$$
+H(x)=\sum\limits_{t=1}^T\alpha_{t}h_{t}(x) \tag{8.4}
+$$
+其中，<span class="arithmatex">\(\alpha_t\)</span> 表示基分类器的权重，因为 AdaBoost 并不使用简单投票法，而是“加权表决法”，即让基学习器具有不同的权值：
+$$
+F(x)=\mathrm{sign}(H(x))=\mathrm{sign}\Big(\sum\limits_{t=1}^T\alpha_{t}h_{t}(x)\Big)
+$$
+<strong>“指数损失函数”</strong>的定义为：
+$$
+\mathscr{l}<em D="D" x_sim="x\sim">{exp}(H\mid D)=\mathbb{E}</em>[e^{-f(x)H(x)}]\tag{8.5}
+$$
+其中，<span class="arithmatex">\(x\sim D\)</span> 表示概率分布 <span class="arithmatex">\(D(x)\)</span>，<span class="arithmatex">\(\mathbb{E}\)</span> 表示期望。</p>
+<p>例如，下面的表格就列出了一个分布 <span class="arithmatex">\(D(x)\)</span>：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D\)</span></td>
+<td>0.1</td>
+<td>0.05</td>
+<td>0.05</td>
+<td>0.2</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>对于这里出现的“指数损失函数”，我们直观地理解一下使用它的合理性，随后在 2.2.2 节中说明使用它的正确性。</p>
+<p>先考虑指数损失函数 <span class="arithmatex">\(e^{-f(x)H(x)}\)</span> 的含义：<span class="arithmatex">\(f\)</span> 为真实函数，对于样本 <span class="arithmatex">\(x\)</span> 来说，<span class="arithmatex">\(f(x)\in\{-1,+1\}\)</span>，只能取 -1 和 +1，而 <span class="arithmatex">\(H(x)\)</span> 是一个实数，表示集成学习器的预测结果。当 <span class="arithmatex">\(H(x)\)</span> 的符号与 <span class="arithmatex">\(f(x)\)</span> 一致时，<span class="arithmatex">\(f(x)H(x)\gt 0\)</span>，因此，<span class="arithmatex">\(e^{-f(x)H(x)}=e^{-|H(x)|}\lt 1\)</span>，且 <span class="arithmatex">\(|H(x)|\)</span> 越大指数损失函数 <span class="arithmatex">\(e^{-f(x)H(x)}\)</span> 越小，（这很合理：此时 <span class="arithmatex">\(|H(x)|\)</span> 越大意味着分类器本身对预测结果的信心越大，损失应该越小；若 <span class="arithmatex">\(|H(x)|\)</span> 在零附近，虽然预测正确，但表示分类器本身对预测结果的信心很小，损失应该越大）；当 <span class="arithmatex">\(H(x)\)</span> 的符号与 <span class="arithmatex">\(f(x)\)</span> 不一致时，<span class="arithmatex">\(f(x)H(x)\lt 0\)</span>，因此，<span class="arithmatex">\(e^{-f(x)H(x)}=e^{|H(x)|}\gt 1\)</span>，且 <span class="arithmatex">\(|H(x)|\)</span> 越大，损失函数越大，（这很合理：因为此时 <span class="arithmatex">\(|H(x)|\)</span> 越大意味着分类器本身对预测结果的信心越大，但预测结果是错的，因此损失应该越大；若 <span class="arithmatex">\(|H(x)|\)</span> 在零附近，虽然预测错误，但表示分类器本身对预测结果的信心很小，虽然错了，损失应该很小）。</p>
+</blockquote>
+<p>同时，我们不难得到两个<strong>工具公式</strong>（注意 <span class="arithmatex">\(f(x)\)</span> 是真实函数，也就是上表中 <span class="arithmatex">\(x\)</span> 所对应的 <span class="arithmatex">\(y\)</span> 的值）：
+$$
+\mathbb{E}<em D="D" x_in="x\in">{x\sim D}[f(x)]=\sum\limits</em>D(x)f(x)\tag{工具公式1}
+$$</p>
+<div class="arithmatex">\[
+\sum\limits_{i=1}^{|D|}D(x_i)\mathbb{I}(f(x_i)=1)=P(f(x_i)=1\mid x_i)\tag{工具公式2}
+\]</div>
+<blockquote>
+<p>这里我们引入“指示函数”的概念，<span class="arithmatex">\(\mathbb{I}(\cdot)=\begin{cases}{1};\quad \cdot\ 为真\\{0};\quad \cdot\ 为假\end{cases}\)</span></p>
+</blockquote>
+<h5 id="223">2.2.3 使用“指数损失函数”的正确性</h5>
+<p>下面，我们从数学角度说明使用“指数损失函数”的正确性。</p>
+<p>若集成学习器 <span class="arithmatex">\(H(x)\)</span> 能令指数损失函数最小化，则考虑式（8.5）对 <span class="arithmatex">\(H(x)\)</span> 的偏导：
+$$
+\dfrac{\partial\mathscr{l}_{exp}(H\mid D)}{\partial H(x)}=-e^{-H(x)}P(f(x)=1\mid x)+e^{H(x)}P(f(x)=-1\mid x)\tag{8.6}
+$$</p>
+<blockquote>
+<p>式（8.6）的具体推导过程为：</p>
+<p>将工具公式1代入式（8.5）：
+$$
+\mathscr{l}<em D="D" x_sim="x\sim">{exp}(H\mid D)=\mathbb{E}</em>[e^{-f(x)H(x)}]=\sum\limits_{x\in D}D(x)e^{-f(x)H(x)}
+$$
+由于工具公式2：
+$$
+\sum\limits_{i=1}^{|D|}D(x_i)\mathbb{I}(f(x_i)=1)=P(f(x_i)=1\mid x_i)
+$$
+又注意到 <span class="arithmatex">\(f(x_i)\in\{-1,+1\}\)</span>，所以：
+$$
+\begin{aligned}
+\dfrac{\partial \mathscr{l}<em i="1">{exp}(H\mid D)}{\partial H(x)}&amp;=\sum\limits</em>^{|D|}D(x_i)\Big(-e^{-H(x_i)}\mathbb{I}(f(x_i)=1)+e^{H(x_i)}\mathbb{I}(f(x_i)=-1)\Big)&amp;分类讨论(两种情形)\
+&amp;=-e^{-H(x_i)}P(f(x_i)=1\mid x_i)+e^{H(x_i)}P(f(x_i)=-1\mid x_i)&amp;由工具公式2得到
+\end{aligned}
+$$
+式（8.6）的具体推导过程至此结束。</p>
+</blockquote>
+<p>令式（8.6）为零，进行求解：
+$$
+-e^{-H(x)}P(f(x)=1\mid x)+e^{H(x)}P(f(x)=-1\mid x)=0
+$$</p>
+<div class="arithmatex">\[
+H(x)+\mathrm{ln}(P(f(x)=-1\mid x))=-H(x)+\mathrm{ln}(P(f(x)=1\mid x))
+\]</div>
+<p>可解得：
+$$
+H(x)=\dfrac{1}{2}\mathrm{ln}\dfrac{P(f(x)=1\mid x)}{P(f(x)=-1\mid x)}\tag{8.7}
+$$
+因此，有：
+$$
+\begin{aligned}
+\mathrm{sign}(H(x))&amp;=\mathrm{sign}\Big(\dfrac{1}{2}\mathrm{ln}\dfrac{P(f(x)=1\mid x)}{P(f(x)=-1\mid x)}\Big)\
+&amp;=\begin{cases}{1},&amp;{P(f(x)=1\mid x)\gt P(f(x)=-1\mid x)}\{-1},&amp;{P(f(x)=1\mid x)\lt P(f(x)=-1\mid x)}\end{cases}&amp;这三行表达的是一个意思\
+&amp;=\mathop {\mathrm{argmax}}\limits_{y\in{-1,1}}P(f(x)=y\mid x)
+\end{aligned}
+\tag{8.8}
+$$
+这意味着 <span class="arithmatex">\(\mathrm{sign}(H(x))\)</span> 达到了贝叶斯最优错误率（即对于每个样本 <span class="arithmatex">\(x\)</span> 都选择后验概率最大的类别）。换言之，若指数损失函数最小化，则分类错误率也将最小化；这说明<strong>指数损失函数</strong>是分类任务原本 0/1 损失函数的一致的（consistent）替代损失函数。由于这个替代损失函数有更好的数学性质，例如它是连续可微函数，因此我们用它替代 0/1 损失函数作为<strong>优化目标</strong>。</p>
+<p>至此，我们知道了使用“指数损失函数”的原因及其正确性。</p>
+<h5 id="224">2.2.4 分类器权重公式</h5>
+<p>下面，我们将从指数损失函数入手，推导 AdaBoost 算法的分类器权重公式。</p>
+<p>在 AdaBoost 算法中，第一个基分类器 <span class="arithmatex">\(h_1\)</span> 是通过直接将基学习器算法用于初始数据分布而得；此后迭代地生成 <span class="arithmatex">\(h_t\)</span> 和 <span class="arithmatex">\(\alpha_{t}\)</span>，当基分类器 <span class="arithmatex">\(h_t\)</span> 基于分布 <span class="arithmatex">\(D_t\)</span> 产生后，该基分类器的权重 <span class="arithmatex">\(\alpha_{t}\)</span> 应使得 <span class="arithmatex">\(\alpha_{t}h_{t}\)</span> 最小化指数损失函数。</p>
+<p>此时的指数损失函数：
+$$
+\begin{aligned}
+\mathscr{l}<em t="t">{exp}(\alpha</em>h_{t}\mid D_{t})&amp;=\mathbb{E}<em t="t">{x\sim D</em>}[e^{-f(x)\alpha_{t}h_t(x)}]&amp;由定义式(8.5)得到\
+&amp;=\mathbb{E}<em t="t">{x\sim D_t}[e^{-\alpha</em>}\mathbb{I}(f(x)=h_t(x))+e^{\alpha_t}\mathbb{I}(f(x)\neq h_t(x))]&amp;分类讨论(两种情形)\
+&amp;=\sum\limits_{x\in D_{t}}D_{t}(x)[e^{-\alpha_{t}}\mathbb{I}(f(x)=h_t(x))+e^{\alpha_t}\mathbb{I}(f(x)\neq h_t(x))]&amp;由工具公式1得到\
+&amp;=e^{-\alpha_{t}}P_{x\sim D_t}(f(x)=h_t(x))+e^{\alpha_{t}}P_{x\sim D_t}(f(x)\neq h_t(x))&amp;由工具公式2得到\
+&amp;=e^{-\alpha_t}(1-\epsilon_{t})+e^{\alpha_t}\epsilon_{t}&amp;错误率的定义
+\end{aligned}\tag{8.9}
+$$
+其中，错误率 <span class="arithmatex">\(\epsilon_{t}=P_{x\sim D_t}(h_t(x)\neq f(x))\)</span>。</p>
+<p>考虑指数损失函数的导数：
+$$
+\begin{aligned}
+&amp;\dfrac{\partial\mathscr{l}<em t="t">{exp}(\alpha</em>h_{t}\mid D_{t})}{\partial\alpha_t}=-e^{-\alpha_t}(1-\epsilon_t)+e^{\alpha_t}\epsilon_{t} &amp;由式(8.9)对\alpha_{t}求偏导
+\end{aligned}\tag{8.10}
+$$
+令式（8.10）为零，进行求解：
+$$
+\begin{aligned}
+&amp;-e^{-\alpha_{t}}(1-\epsilon_{t})+e^{\alpha_{t}}\epsilon_{t}=0&amp;令式(8.10)为零\
+\
+&amp;\alpha_{t}+\mathrm{ln}\epsilon_{t}=-\alpha_{t}+\mathrm{ln}(1-\epsilon_{t})&amp;移项后取对数
+\end{aligned}
+$$</p>
+<p>可解得：
+$$
+\alpha_{t}=\dfrac{1}{2}\mathrm{ln}\Big(\dfrac{1-\epsilon_{t}}{\epsilon_{t}}\Big)\tag{8.11}
+$$
+至此，我们求得了 AdaBoost 算法的分类器权重公式。</p>
+<h5 id="225">2.2.5 样本分布更新公式</h5>
+<p>下面，我们推导 AdaBoost 算法的样本分布更新公式。</p>
+<p>AdaBoost 算法在获得 <span class="arithmatex">\(H_{t-1}\)</span> 之后样本分布将进行调整，使下一轮的基学习器 <span class="arithmatex">\(h_t\)</span> 能纠正 <span class="arithmatex">\(H_{t-1}\)</span> 的一些错误。</p>
+<p>理想的 <span class="arithmatex">\(h_t\)</span> 能纠正 <span class="arithmatex">\(H_{t-1}\)</span> 的全部错误，又因为 <span class="arithmatex">\(H(x)=H_{t-1}(x)+\alpha_{t}h_t(x)\)</span>。</p>
+<p>因此，我们希望最小化 <span class="arithmatex">\(\mathscr{l}_{exp}(H_{t-1}+\alpha_{t}h_{t}\mid D)\)</span>，可以简化为，最小化：
+$$
+\begin{aligned}
+\mathscr{l}<em t-1="t-1">{exp}(H</em>+h_t\mid D)&amp;=\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)(H</em>(x)+h_t(x))}]\
+&amp;=\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)H</em>(x)}e^{-f(x)h_t(x)}]
+\end{aligned}\tag{8.12}
+$$
+对式（8.12）使用 <span class="arithmatex">\(e^{-f(x)h_t(x)}\)</span> 的泰勒展式近似：</p>
+<blockquote>
+<p>使用到的泰勒展开式：<span class="arithmatex">\(e^x\sim1+x+\dfrac{1}{2}x^{2}+o(x^2)\)</span></p>
+</blockquote>
+<p>可得：
+$$
+\mathscr{l}<em t-1="t-1">{exp}(H</em>+h_t\mid D)\simeq\mathbb{E}<em t-1="t-1">{x\sim D}\Big[e^{-f(x)H</em>(x)}\Big(1-f(x)h_t(x)+\dfrac{f^2(x)h_t^2(x)}{2}\Big)\Big]
+$$
+又因为 <span class="arithmatex">\(f^2(x)=h_t^2(x)=1\)</span>，可得：
+$$
+\mathscr{l}<em t-1="t-1">{exp}(H</em>+h_t\mid D)=\mathbb{E}<em t-1="t-1">{x\sim D}\Big[e^{-f(x)H</em>(x)}\Big(1-f(x)h_t(x)+\dfrac{1}{2}\Big)\Big]\tag{8.13}
+$$
+因为理想的基学习器 <span class="arithmatex">\(h_t(x)\)</span> 要使得指数损失函数最小化，所以：
+$$
+\begin{aligned}
+h_t(x)&amp;=\mathop {\mathrm{argmin}}\limits_{h}\mathscr{l}<em t-1="t-1">{exp}(H</em>+h\mid D)&amp;\quad\
+&amp;=\mathop {\mathrm{argmin}}\limits_{h}\mathbb{E}<em t-1="t-1">{x\sim D}\Big[e^{-f(x)H</em>(x)}\Big(1-f(x)h(x)+\dfrac{1}{2}\Big)\Big]&amp;由式(8.13)代入得到\
+&amp;=\mathop {\mathrm{argmin}}\limits_{h}\mathbb{E}<em t-1="t-1">{x\sim D}\Big[e^{-f(x)H</em>(x)}\Big(-f(x)h(x)\Big)\Big]&amp;常数1+\dfrac{1}{2}不影响结果\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t-1="t-1">{x\sim D}\Big[e^{-f(x)H</em>(x)}f(x)h(x)\Big]&amp;去负号\mathrm{argmin}变\mathrm{argmax}\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t-1="t-1">{x\sim D}\Big[\dfrac{e^{-f(x)H</em>(x)}}{\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)H</em>(x)}]}f(x)h(x)\Big]&amp;新加入的常数不影响结果
+\end{aligned}\tag{8.14}
+$$
+注意，式（8.14）中的 <span class="arithmatex">\(\mathbb{E}_{x\sim D}[e^{-f(x)H_{t-1}(x)}]\)</span> 是一个常数，之所以添加此常数，是为了构造出下面的 <span class="arithmatex">\(D_t\)</span> 分布。</p>
+<p>令 <span class="arithmatex">\(D_t\)</span> 表示一个分布：
+$$
+D_t(x)=\dfrac{D(x)e^{-f(x)H_{t-1}(x)}}{\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)H</em>(x)}]}\tag{8.15}
+$$
+根据数学期望的定义，再将式（8.15）代入式（8.14），则理想的基学习器 <span class="arithmatex">\(h_t(x)\)</span>：
+$$
+\begin{aligned}
+h_t(x)&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t-1="t-1">{x\sim D}\Big[\dfrac{e^{-f(x)H</em>(x)}}{\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)H</em>(x)}]}f(x)h(x)\Big]&amp;式(8.14)\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\sum\limits_{i=1}^{|D|}D(x_i)\Big[\dfrac{e^{-f(x_i)H_{t-1}(x_i)}f(x_i)h(x_i)}{\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x_i)H</em>(x_i)}]}\Big]&amp;数学期望的定义\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\sum_{i=1}^{|D|}D_t(x_i)f(x_i)h(x_i)&amp;由式(8.15)代入得到\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t="t">{x\sim D</em>}[f(x)h(x)]
+\end{aligned}\tag{8.16}
+$$
+由于 <span class="arithmatex">\(f(x),h(x)\in\{-1,+1\}\)</span>，有：
+$$
+f(x)h(x)=1-2\mathbb{I}(f(x)\neq h(x))\tag{8.17}
+$$
+则理想的基学习器 <span class="arithmatex">\(h_t(x)\)</span>：
+$$
+\begin{aligned}
+h_t(x)&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t="t">{x\sim D</em>}[f(x)h(x)]&amp;式(8.16)\
+&amp;=\mathop {\mathrm{argmax}}\limits_{h}\mathbb{E}<em t="t">{x\sim D</em>}[1-2\mathbb{I}(f(x)\neq h(x))]&amp;由式(8.17)代入得到\
+&amp;=\mathop {\mathrm{argmin}}\limits_{h}\mathbb{E}<em t="t">{x\sim D</em>}[\mathbb{I}(f(x)\neq h(x))]&amp;去掉常数和负号
+\end{aligned}\tag{8.18}
+$$
+由此可见，理想的 <span class="arithmatex">\(h_t(x)\)</span> 将在分布 <span class="arithmatex">\(D_t\)</span> 下<strong>最小化分类误差</strong>。</p>
+<p>因此，弱分类器将基于分布 <span class="arithmatex">\(D_t\)</span> 进行训练，且针对 <span class="arithmatex">\(D_t\)</span> 的分类误差应小于 0.5，这在一定程度上类似“残差逼近”的思想。</p>
+<p>考虑到 <span class="arithmatex">\(D_t\)</span> 与 <span class="arithmatex">\(D_{t+1}\)</span> 的关系，有：
+$$
+\begin{aligned}
+D_{t+1}(x)&amp;=\dfrac{D(x)e^{-f(x)H_{t}(x)}}{\mathbb{E}<em t="t">{x\sim D}[e^{-f(x)H</em>(x)}]}&amp;由式(8.15)可得\
+&amp;=\dfrac{D(x)e^{-f(x)H_{t-1}(x)}e^{-f(x)\alpha_{t}h_{t}(x)}}{\mathbb{E}<em t="t">{x\sim D}[e^{-f(x)H</em>(x)}]}&amp;将H_t(x)展开得到\
+&amp;=D_t(x)e^{-f(x)\alpha_{t}h_{t}(x)}\dfrac{\mathbb{E}<em t-1="t-1">{x\sim D}[e^{-f(x)H</em>(x)}]}{\mathbb{E}<em t="t">{x\sim D}[e^{-f(x)H</em>(x)}]}&amp;将式(8.15)代入，构造D_t(x)
+\end{aligned}\tag{8.19}
+$$
+至此，我们求得了 AdaBoost 算法的样本分布更新公式。</p>
+<p>于是，由式（8.11）和（8.19）可见，我们从基于<strong>加性模型</strong>最小化<strong>指数损失函数</strong>的角度，推导出了 AdaBoost 算法。</p>
+<h4 id="23">2.3 算法流程</h4>
+<h5 id="231">2.3.1 算法描述</h5>
+<p>AdaBoost 算法流程如下：
+$$
+\begin{aligned}
+输入:\ &amp;训练集\ D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)};\
+&amp;基学习算法\ \mathfrak{L};\
+&amp;训练轮数\ T.\
+过程:\ &amp;\
+&amp;1:D_1(x)=\dfrac{1}{m}.\
+&amp;2:\mathbf{for}\ t=1,2,…,T\ \mathbf{do}\
+&amp;3:\qquad h_t=\mathfrak{L}(D,D_t);\
+&amp;4:\qquad \epsilon_t=P_{x\sim D_t}(h_t(x)\neq f(x));\
+&amp;5:\qquad \mathbf{if}\ \epsilon\gt 0.5\ \mathbf{then\ break}\
+&amp;6:\qquad \alpha_{t}=\dfrac{1}{2}ln\Big(\dfrac{1-\epsilon_{t}}{\epsilon_t}\Big);\
+&amp;7:\qquad D_{t+1}(x)=\dfrac{D_t(x)}{Z_t}\times\begin{cases}{e^{-\alpha_{t}}}, &amp;\mathrm{if}\ h_t(x)=f(x)\{e^{\alpha_{t}}},&amp;\mathrm{if}\ h_t(x)\neq f(x)\end{cases}=\dfrac{D_t(x)e^{-\alpha_{t}f(x)h_t(x)}}{Z_t}\
+&amp;8:\mathbf{end\ for}\
+输出:\ &amp;F(x)=\mathrm{sign}\Big(\sum\limits_{t=1}^{T}\alpha_{t}h_{t}(x)\Big)
+\end{aligned}
+$$
+其中，<span class="arithmatex">\(Z_t\)</span> 是规范化因子，它使得 <span class="arithmatex">\(D_{t+1}\)</span> 是一个分布：
+$$
+Z_t=\sum\limits_{i=1}^{N}w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}
+$$
+我们知道，<span class="arithmatex">\(D_{t+1}\)</span> 表示的是<strong>样本权值的分布</strong>；因此，要想使得 <span class="arithmatex">\(D_{t+1}\)</span> 是一个分布，应当使得 <span class="arithmatex">\(D_{t+1}\)</span> 中的<strong>各样本权值之和为 1</strong>。为了做到这点，我们让 <span class="arithmatex">\(D_{t+1}\)</span> 中的每一个规范化前的样本权值 <span class="arithmatex">\(w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}\)</span> 都除以样本权值的总和 <span class="arithmatex">\(\sum\limits_{i=1}^{N}w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}\)</span>（这个总和也就是规范化因子 <span class="arithmatex">\(Z_t\)</span>），从而让我们得到的各样本权值之和为 1。（直观来说，规范化后的样本权值，即为<strong>规范化前的样本权值 占 总样本权值的比例</strong>，这个比例的总和当然为 1。）</p>
+<p>所以我们也能理解：在式（8.19）中，由于项 <span class="arithmatex">\(\dfrac{\mathbb{E}_{x\sim D}[e^{-f(x)H_{t-1}(x)}]}{\mathbb{E}_{x\sim D}[e^{-f(x)H_{t}(x)}]}\)</span> 是一个常数，所有样本权值同时乘以常数，不会改变<strong>规范化前的样本权值 占 总样本权值的比例</strong>；因此无论是否有它，规范化之后的结果都是一样的，所以我们不去计算这个常数的值。</p>
+<h5 id="232">2.3.2 算法各步骤含义</h5>
+<p>AdaBoost 算法各步骤的含义如下（一一对应）：
+$$
+\begin{aligned}
+输入:\ &amp;训练集\ D={(x_1,y_1),(x_2,y_2),…,(x_m,y_m)};\
+&amp;基学习算法\ \mathfrak{L};\
+&amp;训练轮数\ T.\
+过程:\ &amp;\
+&amp;1:初始化样本权值分布.\
+&amp;2:循环进行\ T\ 轮训练\
+&amp;3:\qquad 基于分布\ D_t\ 从数据集\ D\ 中训练出分类器\ h_t;\
+&amp;4:\qquad 估计\ h_t\ 的误差;\
+&amp;5:\qquad 检查当前基分类器是否比随机猜测好，如果条件不满足，当前基学习器即被抛弃，学习过程停止\
+&amp;6:\qquad 确定分类器\ h_t\ 的权重;\
+&amp;7:\qquad 更新样本分布，其中\ Z_t\ 是规范化因子，以确保\ D_{t+1}\ 是一个分布\
+&amp;8:结束循环\
+输出:\ &amp;分类结果
+\end{aligned}
+$$</p>
+<h4 id="24">2.4 具体算例</h4>
+<h5 id="241">2.4.1 给定数据集与基学习算法</h5>
+<p>假设给出如下表所示的训练数据。假设弱分类器由 <span class="arithmatex">\(x\lt v\)</span> 或 <span class="arithmatex">\(x\gt v\)</span> 产生，其阈值 <span class="arithmatex">\(v\)</span> 使该分类器在训练数据集上的分类误差率最低。试用 AdaBoost 算法学习一个强分类器。</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<h5 id="242-1-2">2.4.2 算法步骤1-2</h5>
+<p>解：</p>
+<p>我们用 <span class="arithmatex">\(t\)</span> 表示当前训练的轮数， <span class="arithmatex">\(i\)</span> 表示实例的序号，<span class="arithmatex">\(m\)</span> 表示训练集实例的总数量。</p>
+<p>在此例中，<span class="arithmatex">\(t=1,2,…,T\)</span>；<span class="arithmatex">\(i=1,2,…,10\)</span>；<span class="arithmatex">\(m=10\)</span>。</p>
+<p>1：初始化样本权值分布 <span class="arithmatex">\(D_1(x)\)</span>：
+$$
+D_1(x)=(w_{11},w_{12},…,w_{110})=\dfrac{1}{m}
+$$</p>
+<div class="arithmatex">\[
+w_{1i}=0.1,\quad i=1,2,…,10
+\]</div>
+<p>这里，<span class="arithmatex">\(w_{ti}\)</span> 表示第 <span class="arithmatex">\(t\)</span> 轮中第 <span class="arithmatex">\(i\)</span> 个实例的权值，并且 <span class="arithmatex">\(\sum\limits_{i=1}^{N}w_{ti}=1\)</span>。</p>
+<p>2：开始循环进行 <span class="arithmatex">\(T\)</span> 轮训练：</p>
+<p>其中，下面的序号 <span class="arithmatex">\(a\)</span> 表示第 1 轮训练，<span class="arithmatex">\(b\)</span> 表示第 2 轮训练，以此类推。</p>
+<h5 id="243-3a-7a-1">2.4.3 算法步骤3a-7a（第 1 轮）</h5>
+<p>3a：基于分布 <span class="arithmatex">\(D_t=D_1\)</span> 从数据集 <span class="arithmatex">\(D\)</span> 中训练出分类器 <span class="arithmatex">\(h_t=h_1\)</span>：
+$$
+h_1=\mathfrak{L}(D,D_1)
+$$
+在权值分布为 <span class="arithmatex">\(D_1\)</span> 的训练数据上，阈值 <span class="arithmatex">\(v\)</span> 取 2.5 时分类误差率最低，故基本分类器为：
+$$
+h_1(x)=\begin{cases}{1},&amp;x\lt 2.5\{-1},&amp;x\gt 2.5\end{cases}
+$$
+4a：估计 <span class="arithmatex">\(h_1\)</span> 的误差：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_1\)</span></td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_1(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>正误</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(h_1(x)\)</span> 的在训练数据集上的误差率为：
+$$
+\epsilon_1=P_{x\sim D_1}(h_1(x)\neq f(x))=0.1+0.1+0.1=0.3
+$$
+务必注意：模型的误差等于误判样本的<strong>权重值之和</strong>（可以看作弱学习器在数据集上的<strong>加权</strong>错误率），而非误判样本数占总样本数的比例。</p>
+<p>5a：检查当前基分类器是否比随机猜测好：
+$$
+\epsilon_{1}=0.3\leq 0.5
+$$
+基分类器 <span class="arithmatex">\(h_1\)</span> 比随机猜测好，循环继续进行。</p>
+<p>6a：确定分类器 <span class="arithmatex">\(h_t=h_1\)</span> 的权重 <span class="arithmatex">\(\alpha_1\)</span>：
+$$
+\alpha_{1}=\dfrac{1}{2}ln\Big(\dfrac{1-\epsilon_{1}}{\epsilon_1}\Big)=\dfrac{1}{2}ln\Big(\dfrac{1-0.3}{0.3}\Big)=0.4236
+$$
+7a：更新样本的权值分布：
+$$
+D_2=(w_{21},…,w_{2i},…,w_{210})=\dfrac{D_1(x)e^{-\alpha_{1}f(x)h_1(x)}}{Z_1}
+$$</p>
+<div class="arithmatex">\[
+w_{2i}=\dfrac{w_{1i}}{Z_1}e^{-\alpha_{1}f(x_i)h_1(x_i)},\quad i=1,2,…,10
+\]</div>
+<p>且已求得，基分类器权重 <span class="arithmatex">\(\alpha_1=0.4236\)</span></p>
+<p>可求，规范化因子（为了使样本的概率分布之和为1）：
+$$
+Z_t=\sum\limits_{i=1}^{N}w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}
+$$</p>
+<div class="arithmatex">\[
+\begin{aligned}
+Z_1&amp;=\sum\limits_{i=1}^{N}w_{1i}e^{-\alpha_{1}f(x_i)h_{1}(x_{i})}\\
+&amp;=0.1e^{-0.4236}+0.1e^{-0.4236}+0.1e^{-0.4236}+0.1e^{-0.4236}+0.1e^{-0.4236}+0.1e^{-0.4236}+0.1e^{0.4236}+0.1e^{0.4236}+0.1e^{0.4236}+0.1e^{-0.4236}\\
+&amp;=0.1e^{-0.4236}\times 7+0.1e^{0.4236}\times 3\qquad 简化计算\\
+&amp;=0.06546857\times 7+0.15274505\times 3\\
+&amp;=0.91651514
+\end{aligned}
+\]</div>
+<p>可求得：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_1=(w_{1i})\)</span></td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+<td>0.1</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_1(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>分子<span class="arithmatex">\(^{[1]}\)</span><span class="arithmatex">\(w_{1i}e^{-\alpha_{1}f(x_i)h_1(x_i)}\)</span></td>
+<td>0.06546857</td>
+<td>0.06546857</td>
+<td>0.06546857</td>
+<td>0.06546857</td>
+<td>0.06546857</td>
+<td>0.06546857</td>
+<td>0.15274505</td>
+<td>0.15274505</td>
+<td>0.15274505</td>
+<td>0.06546857</td>
+</tr>
+<tr>
+<td>权值分布<span class="arithmatex">\(^{[2]}\)</span> <span class="arithmatex">\(D_2=(w_{2i})\)</span></td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td><strong>0.16666</strong></td>
+<td><strong>0.16666</strong></td>
+<td><strong>0.16666</strong></td>
+<td>0.07143</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[1]这里的分子计算：<span class="arithmatex">\(0.1e^{-0.4236}=0.06546857\)</span>；<span class="arithmatex">\(0.1e^{0.4236}=0.15274505\)</span></p>
+<p>[2]可以观察到：第 1 轮中基学习器分类错误的样本 x=6,7,8，在 <span class="arithmatex">\(D_2\)</span> 中的权重变大了，而其他样本权重降低了。</p>
+</blockquote>
+<p>此时的集成分类器：
+$$
+H_1(x)=0.4236h_1(x)
+$$
+分类结果 <span class="arithmatex">\(F(x)=\mathrm{sign}\Big(0.4236h_1(x)\Big)\)</span> 在训练数据集上有 3 个误分类点。</p>
+<h5 id="244-3b-7b-2">2.4.4 算法步骤3b-7b（第 2 轮）</h5>
+<p>3b：基于分布 <span class="arithmatex">\(D_t=D_2\)</span> 从数据集 <span class="arithmatex">\(D\)</span> 中训练出分类器 <span class="arithmatex">\(h_t=h_2\)</span>：
+$$
+h_2=\mathfrak{L}(D,D_2)
+$$
+在权值分布为 <span class="arithmatex">\(D_2\)</span> 的训练数据上，阈值 <span class="arithmatex">\(v\)</span> 取 8.5 时分类误差率最低，故基本分类器为：
+$$
+h_2(x)=\begin{cases}{1},&amp;x\lt 8.5\{-1},&amp;x\gt 8.5\end{cases}
+$$
+4b：估计 <span class="arithmatex">\(h_2\)</span> 的误差：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_2\)</span></td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.07143</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_2(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>正误</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(h_2(x)\)</span> 的在训练数据集上的误差率为：
+$$
+\epsilon_2=P_{x\sim D_2}(h_2(x)\neq f(x))=0.07143+0.07143+0.07143=0.2143
+$$
+5b：检查当前基分类器是否比随机猜测好：
+$$
+\epsilon_{2}=0.2143\leq 0.5
+$$
+基分类器 <span class="arithmatex">\(h_2\)</span> 比随机猜测好，循环继续进行。</p>
+<p>6b：确定分类器 <span class="arithmatex">\(h_t=h_2\)</span> 的权重 <span class="arithmatex">\(\alpha_2\)</span>：
+$$
+\alpha_{2}=\dfrac{1}{2}ln\Big(\dfrac{1-\epsilon_{2}}{\epsilon_2}\Big)=\dfrac{1}{2}ln\Big(\dfrac{1-0.2143}{0.2143}\Big)=0.6496
+$$
+7b：更新样本的权值分布：
+$$
+D_3=(w_{31},…,w_{3i},…,w_{310})=\dfrac{D_2(x)e^{-\alpha_{2}f(x)h_2(x)}}{Z_2}
+$$</p>
+<div class="arithmatex">\[
+w_{3i}=\dfrac{w_{2i}}{Z_2}e^{-\alpha_{2}f(x_i)h_2(x_i)},\quad i=1,2,…,10
+\]</div>
+<p>且已求得，基分类器权重 <span class="arithmatex">\(\alpha_2=0.6496\)</span></p>
+<p>可求，规范化因子：
+$$
+Z_t=\sum\limits_{i=1}^{N}w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}
+$$</p>
+<div class="arithmatex">\[
+\begin{aligned}
+Z_2&amp;=\sum\limits_{i=1}^{N}w_{2i}e^{-\alpha_{2}f(x_i)h_{2}(x_{i})}\\
+&amp;=0.07143e^{-0.6496}+0.07143e^{-0.6496}+0.07143e^{-0.6496}+0.07143e^{0.6496}+0.07143e^{0.6496}+0.07143e^{0.6496}+0.16666e^{-0.6496}+0.16666e^{-0.6496}+0.16666e^{-0.6496}+0.07143e^{-0.6496}\\
+&amp;=0.07143e^{-0.6496}\times 4+0.07143e^{0.6496}\times 3+0.16666e^{-0.6496}\times 3\qquad 简化计算\\
+&amp;=0.03730465\times 4+0.13677236\times 3+0.08703896\times 3\\
+&amp;=0.82065256
+\end{aligned}
+\]</div>
+<p>可求得：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_2=(w_{2i})\)</span></td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.07143</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.07143</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_2(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>分子<span class="arithmatex">\(^{[3]}\)</span> <span class="arithmatex">\(w_{2i}e^{-\alpha_{2}f(x_i)h_2(x_i)}\)</span></td>
+<td>0.03730465</td>
+<td>0.03730465</td>
+<td>0.03730465</td>
+<td>0.13677236</td>
+<td>0.13677236</td>
+<td>0.13677236</td>
+<td>0.08703896</td>
+<td>0.08703896</td>
+<td>0.08703896</td>
+<td>0.03730465</td>
+</tr>
+<tr>
+<td>权值分布<span class="arithmatex">\(^{[4]}\)</span> <span class="arithmatex">\(D_3=(w_{3i})\)</span></td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td><strong>0.16666</strong></td>
+<td><strong>0.16666</strong></td>
+<td><strong>0.16666</strong></td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.04546</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[3]这里的分子计算：<span class="arithmatex">\(0.07143e^{-0.6496}=0.03730465\)</span>；<span class="arithmatex">\(0.07143e^{0.6496}=0.13677236\)</span>；<span class="arithmatex">\(0.16666e^{-0.6496}=0.08703896\)</span></p>
+<p>[4]可以观察到：第 2 轮中基学习器分类错误的样本 x=3,4,5，在 <span class="arithmatex">\(D_3\)</span> 中的权重变大了，而其他样本权重降低了。</p>
+</blockquote>
+<p>此时的集成分类器：
+$$
+H_2(x)=0.4236h_1(x)+0.6496h_2(x)
+$$
+分类结果 <span class="arithmatex">\(F(x)=\mathrm{sign}\Big(0.4236h_1(x)+0.6496h_2(x)\Big)\)</span> 在训练数据集上有 3 个误分类点。</p>
+<h5 id="245-3c-7c-3">2.4.5 算法步骤3c-7c（第 3 轮）</h5>
+<p>3c：基于分布 <span class="arithmatex">\(D_t=D_3\)</span> 从数据集 <span class="arithmatex">\(D\)</span> 中训练出分类器 <span class="arithmatex">\(h_t=h_3\)</span>：
+$$
+h_3=\mathfrak{L}(D,D_3)
+$$
+在权值分布为 <span class="arithmatex">\(D_3\)</span> 的训练数据上，阈值 <span class="arithmatex">\(v\)</span> 取 5.5 时分类误差率最低，故基本分类器为：
+$$
+h_3(x)=\begin{cases}{1},&amp;x\gt 5.5\{-1},&amp;x\lt 5.5\end{cases}
+$$
+4c：估计 <span class="arithmatex">\(h_3\)</span> 的误差：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_3\)</span></td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.04546</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_3(x)\)</span></td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>正误</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+</tr>
+</tbody>
+</table>
+<p><span class="arithmatex">\(h_3(x)\)</span> 的在训练数据集上的误差率为：
+$$
+\epsilon_3=P_{x\sim D_3}(h_3(x)\neq f(x))=0.04546+0.04546+0.04546+0.04546=0.1818
+$$
+5c：检查当前基分类器是否比随机猜测好：
+$$
+\epsilon_{3}=0.1818\leq 0.5
+$$
+基分类器 <span class="arithmatex">\(h_3\)</span> 比随机猜测好，循环继续进行.</p>
+<p>6c：确定分类器 <span class="arithmatex">\(h_t=h_3\)</span> 的权重 <span class="arithmatex">\(\alpha_3\)</span>：
+$$
+\alpha_{3}=\dfrac{1}{2}ln\Big(\dfrac{1-\epsilon_{3}}{\epsilon_3}\Big)=\dfrac{1}{2}ln\Big(\dfrac{1-0.1818}{0.1818}\Big)=0.7521
+$$
+7c：更新样本的权值分布：
+$$
+D_4=(w_{41},…,w_{4i},…,w_{410})=\dfrac{D_3(x)e^{-\alpha_{3}f(x)h_3(x)}}{Z_3}
+$$</p>
+<div class="arithmatex">\[
+w_{4i}=\dfrac{w_{3i}}{Z_3}e^{-\alpha_{3}f(x_i)h_3(x_i)},\quad i=1,2,…,10
+\]</div>
+<p>且已求得，基分类器权重 <span class="arithmatex">\(\alpha_3=0.7521\)</span></p>
+<p>可求，规范化因子：
+$$
+Z_t=\sum\limits_{i=1}^{N}w_{ti}e^{-\alpha_{t}f(x_i)h_{t}(x_{i})}
+$$</p>
+<p>$$
+\begin{aligned}
+Z_3&amp;=\sum\limits_{i=1}^{N}w_{3i}e^{-\alpha_{3}f(x_i)h_{3}(x_{i})}\</p>
+<p>&amp;=0.04546e^{0.7521}+0.04546e^{0.7521}+0.04546e^{0.7521}+0.16666e^{-0.7521}+0.16666e^{-0.7521}+0.16666e^{-0.7521}+0.10606e^{-0.7521}+0.10606e^{-0.7521}+0.10606e^{-0.7521}+0.04546e^{0.7521}\
+&amp;=0.04546e^{0.7521}\times 4+0.16666e^{-0.7521}\times 3+0.10606e^{-0.7521}\times 3\qquad 简化计算\
+&amp;=0.09644113\times 4+0.07855946\times 3+0.04999410\times 3\
+&amp;=0.77142520
+\end{aligned}
+$$</p>
+<p>可求得：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>权值分布 <span class="arithmatex">\(D_3=(w_{3i})\)</span></td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td>0.04546</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.16666</td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.10606</td>
+<td>0.04546</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_3(x)\)</span></td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>分子<span class="arithmatex">\(^{[5]}\)</span> <span class="arithmatex">\(w_{3i}e^{-\alpha_{3}f(x_i)h_3(x_i)}\)</span></td>
+<td>0.09644113</td>
+<td>0.09644113</td>
+<td>0.09644113</td>
+<td>0.07855946</td>
+<td>0.07855946</td>
+<td>0.07855946</td>
+<td>0.04999410</td>
+<td>0.04999410</td>
+<td>0.04999410</td>
+<td>0.09644113</td>
+</tr>
+<tr>
+<td>权值分布<span class="arithmatex">\(^{[6]}\)</span> <span class="arithmatex">\(D_4=(w_{4i})\)</span></td>
+<td><strong>0.12502</strong></td>
+<td><strong>0.12502</strong></td>
+<td><strong>0.12502</strong></td>
+<td>0.10184</td>
+<td>0.10184</td>
+<td>0.10184</td>
+<td>0.06481</td>
+<td>0.06481</td>
+<td>0.06481</td>
+<td><strong>0.12502</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>[5]这里的分子计算：<span class="arithmatex">\(0.04546e^{0.7521}=0.09644113\)</span>；<span class="arithmatex">\(0.16666e^{-0.7521}=0.07855946\)</span>；<span class="arithmatex">\(0.10606e^{-0.7521}=0.04999410\)</span></p>
+<p>[6]可以观察到：第 3 轮中基学习器分类错误的样本 x=0,1,2,9，在 <span class="arithmatex">\(D_4\)</span> 中的权重变大了，而其他样本权重降低了。</p>
+</blockquote>
+<p>此时的集成分类器：
+$$
+H_3(x)=0.4236h_1(x)+0.6496h_2(x)+0.7521h_3(x)
+$$
+分类结果 <span class="arithmatex">\(F(x)=\mathrm{sign}\Big(0.4236h_1(x)+0.6496h_2(x)+0.7521h_3(x)\Big)\)</span> 在训练数据集上有 0 个误分类点。</p>
+<p>具体如下：</p>
+<table>
+<thead>
+<tr>
+<th>序号 <span class="arithmatex">\(i\)</span></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据 <span class="arithmatex">\(x\)</span></td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+<tr>
+<td>类别标签 <span class="arithmatex">\(y=f(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_1(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>加权 <span class="arithmatex">\(\alpha_{1}h_1(x)\)</span></td>
+<td>0.4236</td>
+<td>0.4236</td>
+<td>0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+<td>-0.4236</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_2(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>加权 <span class="arithmatex">\(\alpha_{2}h_2(x)\)</span></td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>0.6496</td>
+<td>-0.6496</td>
+</tr>
+<tr>
+<td>基分类器结果 <span class="arithmatex">\(h_3(x)\)</span></td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>加权 <span class="arithmatex">\(\alpha_{3}h_3(x)\)</span></td>
+<td>-0.7521</td>
+<td>-0.7521</td>
+<td>-0.7521</td>
+<td>-0.7521</td>
+<td>-0.7521</td>
+<td>-0.7521</td>
+<td>0.7521</td>
+<td>0.7521</td>
+<td>0.7521</td>
+<td>0.7521</td>
+</tr>
+<tr>
+<td><span class="arithmatex">\(\sum\limits_{t=1}^{T}\alpha_{t}h_{t}(x)\)</span></td>
+<td>0.3211</td>
+<td>0.3211</td>
+<td>0.3211</td>
+<td>-0.5261</td>
+<td>-0.5261</td>
+<td>-0.5261</td>
+<td>0.9781</td>
+<td>0.9781</td>
+<td>0.9781</td>
+<td>-0.3211</td>
+</tr>
+<tr>
+<td>集成分类器结果 <span class="arithmatex">\(F(x)\)</span></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+<td>-1</td>
+<td>-1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>正误</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<h5 id="246-8">2.4.6 算法步骤8</h5>
+<p>8：结束循环</p>
+<p>输出结果：
+$$
+F(x)=\mathrm{sign}\Big(\sum\limits_{t=1}^{T}\alpha_{t}h_{t}(x)\Big)=\mathrm{sign}\Big(0.4236h_1(x)+0.6496h_2(x)+0.7521h_3(x)\Big)
+$$
+AdaBoost 算法在本数据集的运算至此结束。</p>
+<h4 id="25">2.5 代码实现</h4>
+<p>见代码文件“AdaBoost.ipynb”。</p>
+<h4 id="26">2.6 算法分析</h4>
+<h5 id="261">2.6.1 主要优点</h5>
+<p>①AdaBoost 作为分类器时，分类精度很高，训练误差以指数速率下降；</p>
+<p>②在 AdaBoost 的框架下，可以使用各种回归分类模型来构建弱学习器，非常灵活；</p>
+<p>③作为简单的二元分类器时，构造简单，结果可理解。</p>
+<h5 id="262">2.6.2 主要缺点</h5>
+<p>在 Adaboost 训练过程中，Adaboost 会使得<strong>难于分类的样本</strong>的权值呈指数增长，训练将会过于偏向这类困难的样本；因此它对异常样本是敏感的，异常样本在迭代中可能会获得较高的权重，影响最终强学习器的预测准确性。</p>
+<h4 id="27">2.7 常用技巧</h4>
+<h5 id="271-shrinkage">2.7.1 特征缩减技术（Shrinkage）</h5>
+<p>对每个基学习器乘以一个系数 <span class="arithmatex">\(v\ (0\lt v\lt 1)\)</span>，使其对最终模型的贡献减小，从而防止学的太快产生过拟合，<span class="arithmatex">\(v\)</span> 又称学习率（learning rate）。</p>
+<p>于是，上文的加法模型就从：
+$$
+H(x)=H_{t-1}(x)+\alpha_{t}h_t(x)
+$$
+变为：
+$$
+H(x)=H_{t-1}(x)+v\cdot\alpha_{t}h_t(x)
+$$
+一般 <span class="arithmatex">\(v\)</span> 要和迭代次数 <span class="arithmatex">\(T\)</span> 结合起来使用，较小的 <span class="arithmatex">\(v\)</span> 意味着需要较大的 <span class="arithmatex">\(T\)</span>。</p>
+<p>《<em>The Elements of Staistical Learning</em>》提到的策略是先将 <span class="arithmatex">\(v\)</span> 设得很小 <span class="arithmatex">\((v\lt 0.1)\)</span>，再通过 Early Stopping 选择 <span class="arithmatex">\(T\)</span>；现实中也常用交叉验证（cross-validation）进行选择。</p>
+<h5 id="272-early-stopping">2.7.2 早停法（Early Stopping）</h5>
+<p>将数据集划分为训练集和测试集，在训练过程中不断检查在测试集上的表现，如果测试集上的准确率下降到一定阈值之下，则停止训练，选用当前的迭代次数 <span class="arithmatex">\(T\)</span>，这同样是<strong>防止过拟合</strong>的手段。</p>
+<h5 id="273-weight-trimming">2.7.3 权值修整（Weight Trimming）</h5>
+<p>Weight Trimming 的主要目的是<strong>提高训练速度</strong>，且不显著牺牲准确率。</p>
+<p>在 AdaBoost 的每一轮基学习器训练过程中，只有小部分样本的权重较大，因而能产生较大的影响；而其他大部分权重小的样本则对训练影响甚微。</p>
+<p>Weight Trimming 的思想是每一轮迭代中删除那些低权重的样本，只用高权重样本进行训练。具体是设定一个阈值（比如90%或99%），再将所有样本按权重排序，计算权重的累积和，<strong>累积和大于阈值的权重 (样本) 被舍弃</strong>，不会用于训练。注意每一轮训练完成后所有样本的权重依然会被重新计算，这意味着之前被舍弃的样本在之后的迭代中如果权重增加，可能会重新用于训练。</p>
+<p>参考文献[9]中有使用 Weight Trimming 的 AdaBoost 代码，可供参考。</p>
+<h4 id="28">2.8 参考文献</h4>
+<p>[1]《机器学习》周志华</p>
+<p>[2]《统计学习方法》李航</p>
+<p>[3]《机器学习西瓜书之集成学习》爱你的小魔仙 https://www.bilibili.com/video/BV1PK4y147VQ/</p>
+<p>[4] 《集成学习 之【Adaboost】 —— 李航《统计学习方法》相关章节解读》老弓的学习日记 https://www.bilibili.com/video/BV1x44y1r7Zc</p>
+<p>[5]《通俗易懂讲算法-Adaboost》青青草原灰太郎 https://www.bilibili.com/video/BV13S4y1t7aY/</p>
+<p>[6]《Adaboost是如何训练弱分类器的》herain https://www.zhihu.com/question/443511497?utm_id=0</p>
+<p>[7]《集成学习之Boosting —— AdaBoost原理》wdmad https://zhuanlan.zhihu.com/p/37358517</p>
+<p>[8]《集成学习之Boosting —— AdaBoost实现》wdmad https://zhuanlan.zhihu.com/p/37357981</p>
+<p>[9]《AdaBoost 算法》Rnan-prince https://blog.csdn.net/qq_19446965/article/details/104200720</p>
+<p>[10]《集成学习（Ensemble learning）》张梓寒 https://www.cnblogs.com/ZihanZhang/p/16351469.html</p>
+<p>[11]《Statistical-Learning-Method_Code》Dod-o https://github.com/Dod-o/Statistical-Learning-Method_Code</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ChestnutSilver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

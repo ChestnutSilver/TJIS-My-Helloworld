@@ -1,0 +1,1391 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/">
+      
+      
+        <link rel="next" href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>信息安全数学基础 - TJIS My Helloworld</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href=".." title="TJIS My Helloworld" class="md-header__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TJIS My Helloworld
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              信息安全数学基础
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to My Helloworld
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../page2/" class="md-tabs__link">
+        
+  
+    
+  
+  Page test
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全原理
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全数学基础
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-tabs__link">
+        
+  
+    
+  
+  机器学习理论与应用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-tabs__link">
+        
+  
+    
+  
+  脑认知与智能计算
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-tabs__link">
+        
+  
+    
+  
+  计算机取证
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+          
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TJIS My Helloworld" class="md-nav__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TJIS My Helloworld
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to My Helloworld
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    信息安全数学基础
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    信息安全数学基础
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-1" class="md-nav__link">
+    Chapter 1. 课程须知
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2" class="md-nav__link">
+    Chapter 2. 密码学数学基础引论
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-3" class="md-nav__link">
+    Chapter 3. 抽象代数基本概念
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 3. 抽象代数基本概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 元素集合与运算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 群
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 群">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 群的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 阿贝尔群的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 群、阿贝尔群的例子
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 环和域
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 环和域">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 环和域的概念
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 环和域的例子
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 抽象代数和数论
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4" class="md-nav__link">
+    Chapter 4. 整数理论
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4. 整数理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 整除性
+  </a>
+  
+    <nav class="md-nav" aria-label="1. 整除性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 整除的定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 整除的基本性质
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 整除的两个定理
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习理论与应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脑认知与智能计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机取证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8. 集成学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">信息安全数学基础</h1>
+<h2 id="chapter-1">Chapter 1. 课程须知</h2>
+<p>前几天在社交媒体上读到了这样的一个片段，家长在提问一个在上小学的孩子，说：</p>
+<blockquote>
+<p>“3+9*8 等于多少？”</p>
+</blockquote>
+<p>小孩子迟疑了，支支吾吾不敢作答。孩子知道要“先乘除后加减”，但是对后面的“9*8”，却说老师<strong>没有教过</strong>：</p>
+<blockquote>
+<p>“八九七十二，九八……，我不知道……”</p>
+</blockquote>
+<p>家长似乎有些失去耐心了：</p>
+<blockquote>
+<p>“8 乘以 9，和 9 乘以 8 是一样的！八九七十二，9 乘以 8，也就是 72，再加三就是 75 了。”</p>
+</blockquote>
+<p>其实在很多时候，我们会下意识地认为，“整数乘法满足乘法交换律”是一个很简单、<strong>甚至不需要学就能弄懂</strong>的公理。</p>
+<p>但在小孩子眼中，并非如此。</p>
+<p>孩子会觉得 9*8 是一个老师还没有教过的新知识，它与乘法口诀表的八九七十二是不同的。</p>
+<p>小孩子的直觉是对的。</p>
+<p>当我们在线性代数中，学习了矩阵乘法时，我们又一次感受到<strong>乘法交换律</strong>应用的<strong>局限性</strong>——原来并不是世间万物都满足“交换律”。那么在数学中，什么样的乘法可以使用交换律，或者再想一想，结合律和分配律的应用又是怎样的呢？</p>
+<p>没错，这一次，我们将从整数理论出发，了解数论中<strong>“群”“环”“域”</strong>的概念，它也是许多<strong>密码算法原理</strong>所需要的<strong>数学基础</strong>。</p>
+<p>进一步地，我们还将一起探索<strong>密码学原理和许多具体的算法</strong>，比如椭圆曲线、平方乘算法、素性检测、因子分解算法、离散对数问题等等，它们是理解密码学中许多问题所必需的数学知识。</p>
+<hr />
+<p>由于这份笔记是我自己撰写的，对知识的理解、对问题的解答难免有所疏漏、甚至错误。如果您在阅读的过程中发现任何问题，欢迎与我联系：2053182@tongji.edu.cn，请您一并注明所在单位（或学院）和姓名，我会在收到邮件后的第一时间与您联系。</p>
+<hr />
+<p>最后——</p>
+<p>“那就一起头也不回地向着光亮走下去吧”</p>
+<p>欢迎来到信息安全这一方小小天地，愿我的点滴文字，能与你<strong>一同进步</strong>。</p>
+<hr />
+<p>同济大学电子与信息工程学院 ChestnutSilver / 王润霖</p>
+<p>2023 年 8 月 21 日</p>
+<h2 id="chapter-2">Chapter 2. 密码学数学基础引论</h2>
+<h2 id="chapter-3">Chapter 3. 抽象代数基本概念</h2>
+<h3 id="1">1. 元素集合与运算</h3>
+<p>在这一节，我们将接触群、环、域的最基本的概念（也就是<strong>定义</strong>），并会认识一个特殊的群——阿贝尔群。我们会对数学运算中加法和乘法的交换律、结合律与分配律，数学运算的封闭性，以及单位元、逆元有一个比较<strong>系统的审视</strong>。</p>
+<p>在学习这一节的过程中，我们将会<strong>定义许多运算</strong>，这些运算通常用运算符（ +、 · ）等表示。</p>
+<p><strong>注意！不要把这些下意识地想象成整数加法和乘法，而要注意对运算符的具体定义。</strong></p>
+<p>我们还会定义执行运算的<strong>元素集合</strong>，在整数加法中，元素集合是所有整数；但在我们的定义中，元素集合可能是所有奇数、所有偶数、R 上的所有 n*n 矩阵、R 上的所有 n*n 可逆矩阵……可能的定义有很多很多，不要直接想象成全体整数。</p>
+<p>也许，学完这一节后，你会对数学运算有一个新的理解。这节内容与高等代数部分章节有些相似，如果没有接触过高代也没关系。</p>
+<h3 id="2">2. 群</h3>
+<h4 id="21">2.1 群的概念</h4>
+<p><strong>群</strong>（Group）(G, ∙ )，其中 G 为元素集合， ∙ 是定义在 G 上的二元运算，满足下面的<strong>四个性质</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">性质</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">封闭性</td>
+<td style="text-align: center;">对 <span class="arithmatex">\(\forall a,b\in G\)</span>，有 <span class="arithmatex">\(a\cdot b\in G\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">结合律</td>
+<td style="text-align: center;">对 <span class="arithmatex">\(\forall a,b,c\in G\)</span>，有 <span class="arithmatex">\((a\cdot b)\cdot c=a\cdot(b\cdot c)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">存在单位元</td>
+<td style="text-align: center;"><span class="arithmatex">\(\exists e\in G\)</span>，使得对于 <span class="arithmatex">\(\forall a\in G\)</span>，有 <span class="arithmatex">\(e\cdot a=a\cdot e=a\)</span>，称 <span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(G\)</span> 的单位元</td>
+</tr>
+<tr>
+<td style="text-align: center;">可逆性</td>
+<td style="text-align: center;">对 <span class="arithmatex">\(\forall a\in G\)</span>，<span class="arithmatex">\(\exists b\in G\)</span> 满足 <span class="arithmatex">\(a\cdot b=b\cdot a=e\)</span>，其中 <span class="arithmatex">\(b\)</span> 称为 <span class="arithmatex">\(a\)</span> 的逆元，表示成 <span class="arithmatex">\(b=a^{-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ol>
+<li>单位元通常用 <span class="arithmatex">\(e\)</span>、1 或 0 表示。</li>
+<li>证明一个代数系统是群，可以通过逐一验证每一个性质。</li>
+<li>简写：为了简约起见，在运算符 · 明确的情况下，群 (G, · ) 经常用 G 来代替。</li>
+</ol>
+<details class="question">
+<summary>如何理解群的四个性质？</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="文字描述" name="__tabbed_1" type="radio" /><input id="进一步理解" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="文字描述">文字描述</label><label for="进一步理解">进一步理解</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>
+<p>封闭性：群内<strong>任意两个元素</strong>或两个以上的元素（相同的或不同的）的结合（积）都是<strong>该集合的</strong>一个元素。即：假设对于群 G 操作（运算）是*，对于 G 里的任意元素 <span class="arithmatex">\(a,b\)</span>，那么 <span class="arithmatex">\(a*b\)</span> 和 <span class="arithmatex">\(b*a\)</span> 都必须是 G 的元素。</p>
+</li>
+<li>
+<p>结合律：虽然群元素不一定要求满足交换律，但必须满足<strong>结合律</strong>，即对 G 中任意元素 <span class="arithmatex">\(a,b,c\)</span> 都有 <span class="arithmatex">\((a*b)*c=a*(b*c)\)</span>。</p>
+</li>
+<li>
+<p>存在单位元：集合 G 内<strong>存在</strong>一个单位元素 <span class="arithmatex">\(e\)</span>，它和集合中任何一个元素的积都等于该元素本身，即对于 G 中每个元素 <span class="arithmatex">\(a\)</span> 都有 <span class="arithmatex">\(e*a=a*e=a\)</span>。</p>
+</li>
+<li>
+<p>可逆性：对 G 中<strong>每个元素 <span class="arithmatex">\(a\)</span></strong>，在 G 中都有元素 <span class="arithmatex">\(a^{-1}\)</span>，使 <span class="arithmatex">\(a^{-1}*a=a*a^{-1}=e\)</span>。</p>
+</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>
+<p>群的性质：群有很多性质，例如“群满足消去律”“单位元 <span class="arithmatex">\(e\)</span> 是唯一幂等元”“群同态保持单位元/逆元”等，这些性质后面会详细介绍。</p>
+</li>
+<li>
+<p>群的判定：目前，我们使用了<strong>“逐一验证每一个性质”</strong>的方法判定一个代数系统是否为群；与此同时，还有其他更为简便的方法，例如使用同态、逆元、线性方程、消去律等进行群的判定，这些方法仍然在后面介绍。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</details>
+<p>下面，我们来<strong>通过一个具体的元素集合和二元运算实例</strong>，加深一下对群的概念和四个性质的理解。</p>
+<details class="note" open="open">
+<summary>练习 1.</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="题目" name="__tabbed_2" type="radio" /><input id="思路" name="__tabbed_2" type="radio" /><input id="解答" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="题目">题目</label><label for="思路">思路</label><label for="解答">解答</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>设 A 是所有奇数构成的集合，B 是所有偶数构成的集合，请问 A、B 关于整数的加法运算是否是群？请证明你的结论。</p>
+</div>
+<div class="tabbed-block">
+<p>在这道题目里面，我们要做两件事。第一，判断<strong>所有奇数构成的集合</strong>关于<strong>整数的加法运算</strong>是否是群；第二，判断<strong>所有偶数构成的集合</strong>关于<strong>整数的加法运算</strong>是否是群。你瞧，题目已经定义好了<strong>元素集合</strong>和<strong>二元运算</strong>；下面，我们只需要<strong>逐一验证群的四个性质</strong>，就可以判断它们分别是否是群了。</p>
+<p><strong>技巧：</strong>如何规范地验证群的性质呢？例如：我们都知道，奇数与奇数的和是偶数，它说明了“奇数加法不满足封闭性”，但是，<strong>如何将这句话用规范的数学语言描述呢？</strong></p>
+<p>在高中时，我们经常使用 <span class="arithmatex">\(2n+1\ (n\in \Bbb Z)\)</span> 的方法来表示一个奇数，在验证群的性质时，我们也常用这种方法进行数学描述。我们假设题目中的集合 A 中有两个元素 <span class="arithmatex">\(a,b\)</span>（它们是集合中任意的两个元素），这样，我们就可以用 <span class="arithmatex">\(a=2n+1,\ b=2m+1\ (n,m\in \Bbb Z)\)</span>，来表示 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span> 了；进一步地，<span class="arithmatex">\(a+b=2n+1+2m+1=2(n+m+1)\notin A\)</span>，它规范地使用了数学语言，描述了“奇数加法不满足封闭性”的证明过程。</p>
+<p>其他性质的验证也与此同理。</p>
+<p>这种数学语言在验证群的性质中是<strong>常见</strong>的。</p>
+<p>此外，在验证“存在单位元”性质时，我们要找到这个单位元；在验证“可逆性”性质时，我们要对一个一般的集合元素找到它的逆元，从而说明集合中的每一个元素都有逆元。</p>
+</div>
+<div class="tabbed-block">
+<p>A 关于整数的加法运算不是群；B 关于整数的加法运算是群。</p>
+<p>证明：</p>
+<p>（1）对于 <span class="arithmatex">\(\forall a,b\in A\)</span>，设 <span class="arithmatex">\(a=2n+1,\ b=2m+1\ (n,m\in \Bbb Z)\)</span></p>
+<p>则：<span class="arithmatex">\(a+b=2n+1+2m+1=2(n+m+1)\notin A\)</span></p>
+<p>不满足封闭性，因此 A 关于整数的加法运算不是群。</p>
+<p>（2）对于 <span class="arithmatex">\(\forall a,b,c\in B\)</span>，设 <span class="arithmatex">\(a=2p,\ b=2q,\ c=2r\ (p,q,r\in \Bbb Z)\)</span></p>
+<p>则：①<span class="arithmatex">\(a+b=2p+2q=2(p+q)\in B\)</span>，满足封闭性；</p>
+<p>②<span class="arithmatex">\((a+b)+c=(2p+2q)+2r=2p+2q+2r=2p+(2q+2r)=a+(b+c)\)</span>，满足结合律；</p>
+<p>③<span class="arithmatex">\(\exists e=0,\ e\in B,\ 0+2p=2p+0=2p\)</span>，0 为 B 的单位元，满足存在单位元；</p>
+<p>④<span class="arithmatex">\(\forall a\in B,\ a=2p,\ \exists(-2p)\in B\)</span> 满足 <span class="arithmatex">\(2p+(-2p)=(-2p)+2p=0\)</span>，此时 <span class="arithmatex">\(-2p\)</span> 为 <span class="arithmatex">\(2p\)</span> 的逆元，满足可逆性。</p>
+<p>满足群的四个性质，因此 B 关于整数的加法运算是群。</p>
+<p>证毕。</p>
+</div>
+</div>
+</div>
+</details>
+<h4 id="22">2.2 阿贝尔群的概念</h4>
+<p>若<strong>群 G</strong> 满足交换性则称为<strong>阿贝尔群（Abelian 群）</strong>，或者<strong>交换群</strong>。</p>
+<p>首先，这个代数系统需要是一个群（需要满足群的四个性质），此外，如果它还满足<strong>交换律</strong>，那么它称为阿贝尔群。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">性质</th>
+<th style="text-align: center;">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">交换律</td>
+<td style="text-align: center;">对 <span class="arithmatex">\(\forall a,b\in G\)</span>，有 <span class="arithmatex">\(a\cdot b=b\cdot a\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>证明一个代数系统是阿贝尔群，也可以通过逐一验证每一个性质。</p>
+<h4 id="23">2.3 群、阿贝尔群的例子</h4>
+<ol>
+<li><span class="arithmatex">\((\Bbb Z, + )\)</span>：是阿贝尔群。<span class="arithmatex">\(\Bbb Z\)</span> 表示整数集合 <span class="arithmatex">\(\Bbb Z=\{…,-2,-1,0,1,2,…\}\)</span>，<span class="arithmatex">\(+\)</span> 表示定义在其上的加法运算。</li>
+<li><span class="arithmatex">\((\Bbb Z_{n}, + )\)</span>：是阿贝尔群。<span class="arithmatex">\(\Bbb Z_{n}\)</span> 表示比 <span class="arithmatex">\(n\)</span> 小的非负整数集合（例：<span class="arithmatex">\(\Bbb Z_{4}=\{0,1,2,3\}\)</span>），<span class="arithmatex">\(+\)</span> 表示 <strong><span class="arithmatex">\(mod\ n\)</span> 加法运算</strong>，即：<span class="arithmatex">\(a+b\)</span> 表示 <span class="arithmatex">\((a+b) mod\ n\)</span>，注意这里是在 <span class="arithmatex">\(\Bbb Z\)</span> 上的 <span class="arithmatex">\(+\)</span> 运算。</li>
+<li><span class="arithmatex">\((\Bbb Z^{*}_{n}, · )\)</span>：是阿贝尔群。<span class="arithmatex">\(\Bbb Z^{*}_{n}=\{x\in \Bbb Z_{n} \mid x 与 n 互素\}\)</span>（例：<span class="arithmatex">\(n=3,\Bbb Z^{*}_{3}=\{1,2\}\)</span>；<span class="arithmatex">\(n=4,\Bbb Z^{*}_{4}=\{1,3\}\)</span>），<span class="arithmatex">\(·\)</span> 表示 <span class="arithmatex">\(mod\ n\)</span> 乘法运算，即：<span class="arithmatex">\(a·b=(ab) mod\ n\)</span>。</li>
+<li><span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 关于矩阵加法运算：是阿贝尔群。<span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 表示 <span class="arithmatex">\(\Bbb R\)</span> 上的所有 <span class="arithmatex">\(n\times n\)</span> 矩阵的集合；单位元是全 0 矩阵 <span class="arithmatex">\(0_{n\times n}\)</span>。</li>
+<li><span class="arithmatex">\(GL(n,\Bbb R)\)</span> 关于矩阵乘法运算：是群，但不是阿贝尔群。<span class="arithmatex">\(GL(n,\Bbb R)\)</span> 表示 <span class="arithmatex">\(\Bbb R\)</span> 上所有 <span class="arithmatex">\(n\times n\)</span> 可逆矩阵的集合；单位元是单位矩阵 <span class="arithmatex">\(I_{n\times n}\)</span>；它是一个一般线性群。</li>
+<li><span class="arithmatex">\(S_{n}\)</span> 关于映射合成运算：是群。设 <span class="arithmatex">\(X\)</span> 是<strong>大小为 <span class="arithmatex">\(n\)</span></strong> 的有限集合，记 <span class="arithmatex">\(S_{n}=\{集合 X 上的所有置换\}\)</span>。其中：<span class="arithmatex">\(S_{1}\)</span>，<span class="arithmatex">\(S_{2}\)</span> 是阿贝尔群，<span class="arithmatex">\(S_{3}\)</span> 不是阿贝尔群，当 <span class="arithmatex">\(n&gt;3\)</span> 时，<span class="arithmatex">\(S_{n}\)</span> 不是阿贝尔群。</li>
+</ol>
+<details class="question">
+<summary>如何理解映射合成运算？</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="定义" name="__tabbed_3" type="radio" /><input id="举例" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="定义">定义</label><label for="举例">举例</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>映射合成运算：</strong>设 <span class="arithmatex">\(f:A\rightarrow B,\ g:B\rightarrow C\)</span> 为两个映射，称 <span class="arithmatex">\((g·f)(a):=g(f(a)),\forall a\in A\)</span> 为映射 <span class="arithmatex">\(g\)</span> 与 <span class="arithmatex">\(f\)</span> 的<strong>乘积</strong>或<strong>合成</strong>。</p>
+<p>映射合成运算满足结合律，但 <span class="arithmatex">\(n\geq 3\)</span> 时不满足交换律。</p>
+<p><span class="arithmatex">\(h·(g·f)=(h·g)·f\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(X\)</span> 是大小为 <span class="arithmatex">\(n\)</span> 的有限集合，最简单的例子：<span class="arithmatex">\(X=\{1,2,…,n\}\)</span>.</p>
+<p>（1）置换的例子：</p>
+<p>设 <span class="arithmatex">\(X=\{1,2,3\}\)</span>，此时 <span class="arithmatex">\(S_{3}\)</span> 中的一个元素 <span class="arithmatex">\(\begin{pmatrix} 1,2,3 \\ 2,1,3 \end{pmatrix}\in S_{3}\)</span>，记这个元素为 <span class="arithmatex">\(e\)</span>，它表示的置换是：<span class="arithmatex">\(e(1)=2,\quad e(2)=1,\quad e(3)=3\)</span>.</p>
+<p>（2）<span class="arithmatex">\(S_{n}\)</span> 的例子：</p>
+<p><span class="arithmatex">\(S_{n}=\{x上的所有置换\}\)</span>，我们以 <span class="arithmatex">\(n=3\)</span> 为例：</p>
+<p><span class="arithmatex">\(S_{3}=\left\{
+    \begin{pmatrix} 1,2,3 \\ 1,2,3 \end{pmatrix},
+    \begin{pmatrix} 1,2,3 \\ 2,1,3 \end{pmatrix},
+    \begin{pmatrix} 1,2,3 \\ 1,3,2 \end{pmatrix},
+    \begin{pmatrix} 1,2,3 \\ 3,2,1 \end{pmatrix},
+    \begin{pmatrix} 1,2,3 \\ 2,3,1 \end{pmatrix},
+    \begin{pmatrix} 1,2,3 \\ 3,1,2 \end{pmatrix}
+    \right\}\)</span></p>
+<p>（3）映射合成运算的例子：</p>
+<p>注意映射合成在计算时<strong>从右向左</strong>计算，<span class="arithmatex">\((g·f)(a):=g(f(a))\)</span>，例如：</p>
+<p><span class="arithmatex">\(\begin{pmatrix} \color{red}{1}\color{black},\color{green}{2}\color{black},\color{blue}{3} \\ \color{red}{2}\color{black},\color{green}{1}\color{black},\color{blue}{3} \end{pmatrix}\begin{pmatrix} \color{red}{1}\color{black},\color{blue}{2}\color{black},\color{green}{3} \\ \color{red}{1}\color{black},\color{blue}{3}\color{black},\color{green}{2} \end{pmatrix}=\begin{pmatrix} \color{red}{1}\color{black},\color{blue}{2}\color{black},\color{green}{3} \\ \color{red}{2}\color{black},\color{blue}{3}\color{black},\color{green}{1} \end{pmatrix}\)</span></p>
+</div>
+</div>
+</div>
+</details>
+<details class="question">
+<summary>上述群、阿贝尔群各例的证明过程（简略）？</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:6"><input checked="checked" id="bbb-z--" name="__tabbed_4" type="radio" /><input id="bbb-z_n--" name="__tabbed_4" type="radio" /><input id="bbb-z_n--_1" name="__tabbed_4" type="radio" /><input id="mat_nbbb-r-关于矩阵加法运算" name="__tabbed_4" type="radio" /><input id="glnbbb-r-关于矩阵乘法运算" name="__tabbed_4" type="radio" /><input id="s_n-关于映射合成运算" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="bbb-z--"><span class="arithmatex">\((\Bbb Z, + )\)</span></label><label for="bbb-z_n--"><span class="arithmatex">\((\Bbb Z_{n}, + )\)</span></label><label for="bbb-z_n--_1"><span class="arithmatex">\((\Bbb Z^{*}_{n}, · )\)</span></label><label for="mat_nbbb-r-关于矩阵加法运算"><span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 关于矩阵加法运算</label><label for="glnbbb-r-关于矩阵乘法运算"><span class="arithmatex">\(GL(n,\Bbb R)\)</span> 关于矩阵乘法运算</label><label for="s_n-关于映射合成运算"><span class="arithmatex">\(S_{n}\)</span> 关于映射合成运算</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<ol>
+<li>封闭性：对 <span class="arithmatex">\(\forall a,b\in \Bbb Z\)</span>，有 <span class="arithmatex">\(a+b\in \Bbb Z\)</span>；</li>
+<li>结合律：对 <span class="arithmatex">\(\forall a,b,c\in \Bbb Z\)</span>，有 <span class="arithmatex">\((a+b)+c=a+(b+c)\)</span>；</li>
+<li>0是单位元：对 <span class="arithmatex">\(\forall a\in \Bbb Z\)</span>，有 <span class="arithmatex">\(0+a=a+0=a\)</span>；</li>
+<li>可逆性：对 <span class="arithmatex">\(\forall a\in \Bbb Z\)</span>，有 <span class="arithmatex">\((-a)+a=a+(-a)=0\)</span>，因此 <span class="arithmatex">\(-a\)</span> 是 <span class="arithmatex">\(a\)</span> 的逆元；</li>
+<li>交换律：对 <span class="arithmatex">\(\forall a,b\in \Bbb Z\)</span>，有 <span class="arithmatex">\(a+b=b+a\)</span>。</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>介绍同余性质时再证明。</p>
+</div>
+<div class="tabbed-block">
+<p>介绍同余性质时再证明。</p>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>封闭性：设 <span class="arithmatex">\(A,B\in Mat_{n}(\Bbb R)\)</span>，则 <span class="arithmatex">\(A,B\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，于是 <span class="arithmatex">\(A+B\)</span> 也是 <span class="arithmatex">\(n\times n\)</span> 矩阵，从而 <span class="arithmatex">\(A+B\in Mat_{n}(\Bbb R)\)</span>.</li>
+<li>结合律：因为矩阵的加法满足结合律，所以 <span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 中的加法运算也满足结合律。</li>
+<li>全 0 矩阵是单位元：全 0 矩阵 <span class="arithmatex">\(0_{n\times n}\in Mat_{n}(\Bbb R)\)</span>，且对任意的矩阵 <span class="arithmatex">\(A\in Mat_{n}(\Bbb R)\)</span>，有：<span class="arithmatex">\(0_{n\times n}+A=A+0_{n\times n}=A\)</span>，所以全 0 矩阵 <span class="arithmatex">\(0_{n\times n}\)</span> 是 <span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 的单位元。</li>
+<li>可逆性：对于 <span class="arithmatex">\(\forall A\in Mat_{n}(\Bbb R)\)</span>，<span class="arithmatex">\(A\)</span> 是 <span class="arithmatex">\(n\times n\)</span> 矩阵，于是 <span class="arithmatex">\(-A\)</span> 存在且是 <span class="arithmatex">\(n\times n\)</span> 矩阵，从而 <span class="arithmatex">\(-A\in Mat_{n}(\Bbb R)\)</span>，且：<span class="arithmatex">\(A+(-A)=(-A)+A=0_{n\times n}\)</span>，所以 <span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 中的每个元素在 <span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 中都可逆。</li>
+<li>交换律：因为矩阵的加法满足交换律，所以 <span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span> 中的加法运算也满足交换律。</li>
+</ol>
+</div>
+<div class="tabbed-block">
+<ol>
+<li>封闭性：设 <span class="arithmatex">\(A,B\in GL(n,\Bbb R)\)</span>，则 <span class="arithmatex">\(A,B\)</span> 可逆，于是 <span class="arithmatex">\(AB\)</span> 也可逆，从而 <span class="arithmatex">\(AB\in GL(n,\Bbb R)\)</span>.</li>
+<li>结合律：因为矩阵的乘法满足结合律，所以 <span class="arithmatex">\(GL(n,\Bbb R)\)</span> 中的乘法运算也满足结合律。</li>
+<li>单位矩阵是单位元：单位矩阵 <span class="arithmatex">\(E\in GL(n,\Bbb R)\)</span>，且对任意的矩阵 <span class="arithmatex">\(A\in GL(n,\Bbb R)\)</span>，有：<span class="arithmatex">\(EA=AE=A\)</span>，所以单位矩阵 <span class="arithmatex">\(E\)</span> 是 <span class="arithmatex">\(GL(n,\Bbb R)\)</span> 的单位元。</li>
+<li>可逆性：对于 <span class="arithmatex">\(\forall A\in GL(n,\Bbb R)\)</span>，<span class="arithmatex">\(A\)</span> 可逆，于是 <span class="arithmatex">\(A^{-1}\)</span> 存在且可逆，从而 <span class="arithmatex">\(A^{-1}\in GL(n,\Bbb R)\)</span>，且：<span class="arithmatex">\(A\cdot A^{-1}=A^{-1}\cdot A=E\)</span>，所以 <span class="arithmatex">\(GL(n,\Bbb R)\)</span> 中的每个元素在 <span class="arithmatex">\(GL(n,\Bbb R)\)</span> 中都可逆。</li>
+</ol>
+<p>注：相似题目，见“练习3”.</p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(S_{1},S_{2}\)</span>是阿贝尔群，由于它们的形式简单，因此是容易证得的。</p>
+<p>当 <span class="arithmatex">\(n\geq 3\)</span> 时，证明过程见“练习2”。</p>
+</div>
+</div>
+</div>
+</details>
+<details class="question">
+<summary>如何证明一个代数系统不是阿贝尔群？（以 <span class="arithmatex">\(S_{3}\)</span> 为例）</summary>
+<p>我们一般通过对某个性质<strong>举一个反例</strong>的方法，证明一个代数系统不是阿贝尔群。</p>
+<p>以 <span class="arithmatex">\(S_{3}\)</span> 为例，证明如下：</p>
+<p>设 <span class="arithmatex">\(X=\{x_{1},x_{2},x_{3}\}\)</span>，令 <span class="arithmatex">\(e,e'\in S_{3}\)</span> 满足：</p>
+<p><span class="arithmatex">\(e(x_{1})=x_{1},\quad e(x_{2})=x_{3},\quad e(x_{3})=x_{2}\)</span>，</p>
+<p><span class="arithmatex">\(e'(x_{1})=x_{2},\quad e'(x_{2})=x_{3},\quad e'(x_{3})=x_{1}\)</span>，</p>
+<p>那么：<span class="arithmatex">\(ee'(x_{1})=e(x_{2})=x_{3},\quad e'e(x_{1})=e'(x_{1})=x_{2}\)</span>.</p>
+<p>因此：<span class="arithmatex">\(ee'\not=e'e\)</span>.</p>
+<p>所以，<span class="arithmatex">\(S_{3}\)</span> 不是阿贝尔群。</p>
+<p>证毕。</p>
+</details>
+<details class="note" open="open">
+<summary>练习 2.</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="题目_1" name="__tabbed_5" type="radio" /><input id="思路_1" name="__tabbed_5" type="radio" /><input id="解答_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="题目_1">题目</label><label for="思路_1">思路</label><label for="解答_1">解答</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>证明 <span class="arithmatex">\(n&gt;3\)</span> 时，<span class="arithmatex">\(S_{n}\)</span> 不是阿贝尔群。</p>
+</div>
+<div class="tabbed-block">
+<p>刚才我们已经提到，一般通过对某个性质<strong>举一个反例</strong>的方法，证明一个代数系统不是阿贝尔群，这个反例可以是很具体的。</p>
+<p>我们已经证明过 <span class="arithmatex">\(S_{3}\)</span> 不是阿贝尔群了，当 <span class="arithmatex">\(n&gt;3\)</span> 时，<span class="arithmatex">\(S_{n}\)</span> 与 <span class="arithmatex">\(S_{3}\)</span> 的区别，无非就是又<strong>多了几列映射</strong>，我们只需要让多出的这几列映射为对自身的映射，不去关注它（方便证明过程中的计算），从而只关注前 3 列的映射关系。</p>
+<p>此时，再证明它不满足交换律，就和证明 <span class="arithmatex">\(S_{3}\)</span> 不满足交换律一样简单了。</p>
+</div>
+<div class="tabbed-block">
+<p>证明：</p>
+<p>先证 <span class="arithmatex">\(n=3\)</span> 时，<span class="arithmatex">\(S_{n}\)</span> 不是阿贝尔群。</p>
+<p><span class="arithmatex">\(\begin{pmatrix} 1,2,3 \\ 1,3,2 \end{pmatrix},\begin{pmatrix} 1,2,3 \\ 2,1,3 \end{pmatrix}\in S_{3}\)</span></p>
+<p><span class="arithmatex">\(\begin{pmatrix} 1,2,3 \\ 1,3,2 \end{pmatrix}\begin{pmatrix} 1,2,3 \\ 2,1,3 \end{pmatrix}=\begin{pmatrix} 1,2,3 \\ 3,1,2 \end{pmatrix}\)</span></p>
+<p><span class="arithmatex">\(\begin{pmatrix} 1,2,3 \\ 2,1,3 \end{pmatrix}\begin{pmatrix} 1,2,3 \\ 1,3,2 \end{pmatrix}=\begin{pmatrix} 1,2,3 \\ 2,3,1 \end{pmatrix}\)</span></p>
+<p>且：<span class="arithmatex">\(\begin{pmatrix} 1,2,3 \\ 3,1,2 \end{pmatrix}\not=\begin{pmatrix} 1,2,3 \\ 2,3,1 \end{pmatrix}\)</span>，不满足交换律。</p>
+<p>因此 <span class="arithmatex">\(S_{3}\)</span> 不是阿贝尔群。</p>
+<p>当 <span class="arithmatex">\(n&gt;3\)</span> 时，令满足 <span class="arithmatex">\(i&gt;3\)</span> 的所有第 <span class="arithmatex">\(i\)</span> 列，均为对自身的映射。</p>
+<p>即：<span class="arithmatex">\(\begin{pmatrix} 1,2,3,\ldots\ldots,n \\ 1,3,2,\underbrace{\ldots\ldots,n}_{对自身映射} \end{pmatrix},\begin{pmatrix} 1,2,3,\ldots\ldots,n \\ 2,1,3,\underbrace{\ldots\ldots,n}_{对自身映射} \end{pmatrix}\in S_{n}\)</span></p>
+<p><span class="arithmatex">\(\begin{pmatrix} 1,2,3,\ldots,n \\ 1,3,2,\ldots,n \end{pmatrix}\begin{pmatrix} 1,2,3,\ldots,n \\ 2,1,3,\ldots,n \end{pmatrix}=\begin{pmatrix} 1,2,3,\ldots,n \\ 3,1,2,\ldots,n \end{pmatrix}\)</span></p>
+<p><span class="arithmatex">\(\begin{pmatrix} 1,2,3,\ldots,n \\ 2,1,3,\ldots,n \end{pmatrix}\begin{pmatrix} 1,2,3,\ldots,n \\ 1,3,2,\ldots,n \end{pmatrix}=\begin{pmatrix} 1,2,3,\ldots,n \\ 2,3,1,\ldots,n \end{pmatrix}\)</span></p>
+<p>且：<span class="arithmatex">\(\begin{pmatrix} 1,2,3,\ldots\ldots,n \\ 3,1,2,\underbrace{\ldots\ldots,n}_{对自身映射} \end{pmatrix}\not=\begin{pmatrix} 1,2,3,\ldots\ldots,n \\ 2,3,1,\underbrace{\ldots\ldots,n}_{对自身映射} \end{pmatrix}\)</span> 不满足交换律。</p>
+<p>因此 <span class="arithmatex">\(n&gt;3\)</span> 时，<span class="arithmatex">\(S_{n}\)</span> 不是阿贝尔群。</p>
+<p>证毕。</p>
+</div>
+</div>
+</div>
+</details>
+<details class="note" open="open">
+<summary>练习 3.</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="题目_2" name="__tabbed_6" type="radio" /><input id="思路_2" name="__tabbed_6" type="radio" /><input id="解答_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="题目_2">题目</label><label for="思路_2">思路</label><label for="解答_2">解答</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>假设 <span class="arithmatex">\(\mathscr A\)</span> 是所有形如 <span class="arithmatex">\(A=\begin{bmatrix} a &amp; b \\ 0 &amp; 1 \\ \end{bmatrix}\)</span> 的 <span class="arithmatex">\(2\times 2\)</span> 矩阵构成的集合，其中 <span class="arithmatex">\(a\not=0\)</span>.对于实数上的矩阵乘法运算，(a)证明 <span class="arithmatex">\(\mathscr A\)</span> 是群。(b)<span class="arithmatex">\(\mathscr A\)</span> 是否是阿贝尔群？请证明你的结论。</p>
+</div>
+<div class="tabbed-block">
+<p>看到这个形式，可以想到我们前面学到的：</p>
+<p><span class="arithmatex">\(GL(n,\Bbb R)\)</span> 关于矩阵乘法运算：是群，但不是阿贝尔群。<span class="arithmatex">\(GL(n,\Bbb R)\)</span> 表示 <span class="arithmatex">\(\Bbb R\)</span> 上所有 <span class="arithmatex">\(n\times n\)</span> 可逆矩阵的集合；单位元是单位矩阵 <span class="arithmatex">\(I_{n\times n}\)</span>；它是一个一般线性群。</p>
+<p>它要求集合中的元素是 <span class="arithmatex">\(n\times n\)</span> 可逆矩阵，而这道题目中的元素是形如 <span class="arithmatex">\(A=\begin{bmatrix} a &amp; b \\ 0 &amp; 1 \\ \end{bmatrix}\)</span> 的 <span class="arithmatex">\(2\times 2\)</span> 矩阵。</p>
+<p>回想一下线性代数的知识：我们可以用“行列式不等于零的矩阵可逆”的方法，计算行列式：<span class="arithmatex">\(\begin{vmatrix} a &amp; b \\ 0 &amp; 1 \\ \end{vmatrix}=a-0=a\)</span>，又因为题目中说 <span class="arithmatex">\(a\not=0\)</span>，所以它是一个 <span class="arithmatex">\(2\times 2\)</span> 可逆矩阵的集合，根据前面学的结论，它是群，但不是阿贝尔群。</p>
+<p>得到了结论，我们如何证明呢？</p>
+<p>事实上，在证明 <span class="arithmatex">\(GL(n,\Bbb R)\)</span> 的封闭、可逆等性质时，还可以充分利用<strong>“行列式不等于零的矩阵可逆”</strong>的性质，这样的思路是常见的。</p>
+</div>
+<div class="tabbed-block">
+<p>（a）证明：</p>
+<p>对于 <span class="arithmatex">\(\forall p,q,r\in \mathscr A\)</span>，设 <span class="arithmatex">\(p=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix},q=\begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix},r=\begin{bmatrix} r_{1} &amp; r_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span>，其中 <span class="arithmatex">\(p_{1},q_{1},r_{1}\not=0\)</span>.</p>
+<p>① <span class="arithmatex">\(p\cdot q=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}=\begin{bmatrix} p_{1}q_{1} &amp; p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\because p_{1}q_{1}\not=0,\quad \begin{bmatrix} p_{1}q_{1} &amp; p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\in \mathscr A\)</span></p>
+<p><span class="arithmatex">\(\therefore\)</span> 满足封闭性。</p>
+<p>② <span class="arithmatex">\((p\cdot q)\cdot r = \left(\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\right)\cdot \begin{bmatrix} r_{1} &amp; r_{2} \\ 0 &amp; 1 \\ \end{bmatrix} = \begin{bmatrix} p_{1}q_{1} &amp; p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} r_{1} &amp; r_{2} \\ 0 &amp; 1 \\ \end{bmatrix} = \begin{bmatrix} p_{1}q_{1}r_{1} &amp; p_{1}q_{1}r_{2}+p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(p\cdot (q\cdot r) = \begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \left(\begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} r_{1} &amp; r_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\right) = \begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} q_{1}r_{1} &amp; q_{1}r_{2}+q_{2} \\ 0 &amp; 1 \end{bmatrix}=\begin{bmatrix} p_{1}q_{1}r_{1} &amp; p_{1}q_{1}r_{2}+p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\because (p\cdot q)\cdot r = p\cdot (q\cdot r)\)</span></p>
+<p><span class="arithmatex">\(\therefore\)</span> 满足结合律。</p>
+<p>③ <span class="arithmatex">\(\exists e\in \mathscr A,\quad e=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix},\)</span> 使得 <span class="arithmatex">\(\forall p\in\mathscr A\)</span>，设 <span class="arithmatex">\(p=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(e\cdot p=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix},\quad p\cdot e=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(e\cdot p=p\cdot e=p\)</span></p>
+<p><span class="arithmatex">\(e\)</span> 为 <span class="arithmatex">\(\mathscr A\)</span> 的单位元。</p>
+<p><span class="arithmatex">\(\therefore\)</span> 满足存在单位元。</p>
+<p>④ 对于 <span class="arithmatex">\(\forall p\in\mathscr A\)</span>，设 <span class="arithmatex">\(p=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\exists p'\in\mathscr A,\quad p'=\begin{bmatrix} \frac{1}{p_{1}} &amp; -\frac{p_{2}}{p_{1}} \\ 0 &amp; 1 \end{bmatrix}\)</span>，满足：</p>
+<p><span class="arithmatex">\(p\cdot p'=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} \frac{1}{p_{1}} &amp; -\frac{p_{2}}{p_{1}} \\ 0 &amp; 1 \end{bmatrix}=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ \end{bmatrix}=e\)</span></p>
+<p><span class="arithmatex">\(p'\cdot p=\begin{bmatrix} \frac{1}{p_{1}} &amp; -\frac{p_{2}}{p_{1}} \\ 0 &amp; 1 \end{bmatrix}\cdot \begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \\ \end{bmatrix}=e\)</span></p>
+<p><span class="arithmatex">\(p\cdot p'=p'\cdot p=e\)</span>，<span class="arithmatex">\(p'\)</span> 为 <span class="arithmatex">\(p\)</span> 的逆元。</p>
+<p><span class="arithmatex">\(\therefore\)</span> 满足可逆性。</p>
+<p>综上，<span class="arithmatex">\(\mathscr A\)</span> 是群。</p>
+<p>（b）<span class="arithmatex">\(\mathscr A\)</span> 不是阿贝尔群。</p>
+<p>证明：</p>
+<p>对于 <span class="arithmatex">\(\forall p,q\in\mathscr A\)</span>，设 <span class="arithmatex">\(p=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix},q=\begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(p\cdot q=\begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}=\begin{bmatrix} p_{1}q_{1} &amp; p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(q\cdot p=\begin{bmatrix} q_{1} &amp; q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\cdot \begin{bmatrix} p_{1} &amp; p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}=\begin{bmatrix} p_{1}q_{1} &amp; p_{2}q_{1}+q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span></p>
+<p><span class="arithmatex">\(\begin{bmatrix} p_{1}q_{1} &amp; p_{1}q_{2}+p_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\not=\begin{bmatrix} p_{1}q_{1} &amp; p_{2}q_{1}+q_{2} \\ 0 &amp; 1 \\ \end{bmatrix}\)</span>，（<span class="arithmatex">\(p_{1}q_{2}+p_{2}\not=p_{2}q_{1}+q_{2}\)</span> 时）</p>
+<p><span class="arithmatex">\(\therefore p\cdot q\not=q\cdot p\)</span>，（<span class="arithmatex">\(p_{1}q_{2}+p_{2}\not=p_{2}q_{1}+q_{2}\)</span> 时）</p>
+<p><span class="arithmatex">\(\therefore\)</span> 不满足交换律。</p>
+<p><span class="arithmatex">\(\mathscr A\)</span> 不是阿贝尔群。</p>
+<p>证毕。</p>
+</div>
+</div>
+</div>
+</details>
+<h3 id="3">3. 环和域</h3>
+<h4 id="31">3.1 环和域的概念</h4>
+<p>下面我们来介绍“环”，它的性质比“群”要多许多，这类代数系统同时定义了 <span class="arithmatex">\(+\)</span>、<span class="arithmatex">\(\cdot\)</span> 两个二元运算。</p>
+<p><strong>环（Ring）<span class="arithmatex">\((\Bbb R,+,\cdot)\)</span>：</strong><span class="arithmatex">\(\Bbb R\)</span> 是元素集合，<span class="arithmatex">\(+,\cdot\)</span> 是定义在 <span class="arithmatex">\(\Bbb R\)</span> 上的二元运算，且满足<strong>如下三类性质</strong>则称为环：</p>
+<ol>
+<li><span class="arithmatex">\((\Bbb R,+)\)</span> 是阿贝尔群；</li>
+<li>乘法 <span class="arithmatex">\(\cdot\)</span> 满足：封闭性、结合律、存在单位元；</li>
+<li><span class="arithmatex">\(+,\cdot\)</span> 满足：分配律。</li>
+</ol>
+<p>在这里，我们将 <span class="arithmatex">\((\Bbb R,+)\)</span> 的单位元记为 0，称为“加法单位元”；将 <span class="arithmatex">\((\Bbb R,\cdot)\)</span> 的单位元记为 1，称为“乘法单位元”。</p>
+<p><strong>分配律的含义</strong>是：对 <span class="arithmatex">\(\forall a,b,c\in\Bbb R\)</span>，有 <span class="arithmatex">\((a+b)c=(ac)+(bc),\quad c(a+b)=(ca)+(cb)\)</span>.</p>
+<p><strong>交换环：</strong> 在 <span class="arithmatex">\((\Bbb R,+,\cdot)\)</span> 是一个环的基础上，如果<strong>还满足</strong>下面的一类性质，则称为交换环。</p>
+<ol>
+<li>乘法 <span class="arithmatex">\(\cdot\)</span> 满足：交换律。</li>
+</ol>
+<p><strong>域（Field）：</strong> 在 <span class="arithmatex">\((\Bbb R,+,\cdot)\)</span> 是一个交换环的基础上，如果<strong>还满足</strong>下面的一类性质，则称为域。</p>
+<ol>
+<li><span class="arithmatex">\(0\not=1\)</span>，所有非 0 元素都有乘法逆元。</li>
+</ol>
+<p>其中，元素个数无限的称为<strong>无限域</strong>，个数有限的域称为<strong>有限域</strong>。</p>
+<p><strong>域还有另一种定义方法</strong>，它也是一个定理。</p>
+<p><span class="arithmatex">\((\Bbb F,+,\cdot)\)</span> 是域，<strong>等价于</strong>下面的三个条件同时满足：</p>
+<ol>
+<li><span class="arithmatex">\((\Bbb F,+,0)\)</span> 是阿贝尔群；</li>
+<li><span class="arithmatex">\((\Bbb F^{*},\cdot,1)\)</span> 是阿贝尔群；（其中 <span class="arithmatex">\(F^{*}=F\backslash\{0\}\)</span>）</li>
+<li><span class="arithmatex">\(+,\cdot\)</span> 满足分配律。</li>
+</ol>
+<h4 id="32">3.2 环和域的例子</h4>
+<ol>
+<li><span class="arithmatex">\((Mat_{n}(\Bbb R),+,\cdot)\)</span> 是环，其中 <span class="arithmatex">\(+,\cdot\)</span> 分别表示 <span class="arithmatex">\(\Bbb R\)</span> 上的矩阵加法和乘法。
+   在 <span class="arithmatex">\(n&gt;1\)</span> 时，它不是交换环。</li>
+<li><span class="arithmatex">\((\Bbb Z, +,\cdot)\)</span> 是交换环，但不是域。
+   原因：整数 <span class="arithmatex">\(\Bbb Z\)</span> 是一个交换环，但是由于不符合“所有非 0 元素都有乘法逆元”（例如：<span class="arithmatex">\(2^{-1}=1/2,\quad 1/2\notin\Bbb Z)\)</span>，所以它不是一个域。</li>
+<li><span class="arithmatex">\((\Bbb Z_{m}, +,\cdot)\)</span> 是交换环，当且仅当 <span class="arithmatex">\(m\)</span> 为素数时是域。
+   在同余式部分会给出证明。</li>
+<li>实数域 <span class="arithmatex">\((\Bbb R,+,\cdot)\)</span>、有理数域 <span class="arithmatex">\((\Bbb Q,+,\cdot)\)</span>、复数域 <span class="arithmatex">\((\Bbb C,+,\cdot)\)</span> 都是域。</li>
+</ol>
+<h3 id="4">4. 抽象代数和数论</h3>
+<p>这一小节简要了解就可以了。</p>
+<p>1.由数论问题发展出抽象代数。</p>
+<p>Galois 证明了方程次数 <span class="arithmatex">\(\geq 5\)</span> 时不存在根式求解公式。</p>
+<p>2.数论问题为抽象代数提供具体的例子。</p>
+<p>例如：</p>
+<p><span class="arithmatex">\((\Bbb Z_{n}, + )\)</span>：是阿贝尔群。<span class="arithmatex">\(\Bbb Z_{n}\)</span> 表示比 <span class="arithmatex">\(n\)</span> 小的非负整数集合，<span class="arithmatex">\(+\)</span> 表示 <span class="arithmatex">\(mod\ n\)</span> 加法运算。</p>
+<p><span class="arithmatex">\((\Bbb Z^{*}_{n}, · )\)</span>：是阿贝尔群。<span class="arithmatex">\(\Bbb Z^{*}_{n}=\{x\in \Bbb Z_{n} \mid x 与 n 互素\}\)</span>，<span class="arithmatex">\(·\)</span> 表示 <span class="arithmatex">\(mod\ n\)</span> 乘法运算。当 <span class="arithmatex">\(n\)</span> 是素数时，它是循环群。</p>
+<p><span class="arithmatex">\((\Bbb Z_{p}, +,\cdot)\)</span> 是域。其中 <span class="arithmatex">\(p\)</span> 为素数。</p>
+<h2 id="chapter-4">Chapter 4. 整数理论</h2>
+<p>在这一小节里面，我们将会学习整数理论，它包括很多与整数相关的<strong>定理和性质</strong>，需要我们在题目中灵活应用，也是后面章节的<strong>重要基础</strong>。</p>
+<p>整数理论可以出的题目有很多，其中，大部分是<strong>证明题</strong>，会反复应用学到的定理和性质，有些题目很难在第一次遇见时就想到<strong>解题思路</strong>；没关系，只要我们把学到的这些题目的思路和方法都弄懂，在期末考试中也一定能发挥出优秀的水平。</p>
+<p>这两个符号，我们一定都认识：</p>
+<p><span class="arithmatex">\(\Bbb Z\)</span>：整数集合，<span class="arithmatex">\(\Bbb Z^{+}\)</span>：正整数集合。</p>
+<p>可以再顺带复习一下上一节中，<span class="arithmatex">\(\Bbb Z_{n}\)</span>、<span class="arithmatex">\(\Bbb Z^{*}_{n}\)</span>、<span class="arithmatex">\(Mat_{n}(\Bbb R)\)</span>、<span class="arithmatex">\(GL(n,\Bbb R)\)</span>、<span class="arithmatex">\(S_{n}\)</span> 的含义。</p>
+<h3 id="1_1">1. 整除性</h3>
+<h4 id="11">1.1 整除的定义</h4>
+<p><strong>整除</strong>的定义：<span class="arithmatex">\(\forall a,b\in\Bbb Z\)</span>，其中 <span class="arithmatex">\(b\not=0\)</span>，如果 <span class="arithmatex">\(\exists q\in\Bbb Z\)</span> 满足：<span class="arithmatex">\(a=bq\)</span>，就说 <span class="arithmatex">\(b\)</span> 整除 <span class="arithmatex">\(a\)</span>，记作 <span class="arithmatex">\(b\mid a\)</span>；<span class="arithmatex">\(b\)</span> 叫做 <span class="arithmatex">\(a\)</span> 的因数（或因子），<span class="arithmatex">\(a\)</span> 叫做 <span class="arithmatex">\(b\)</span> 的倍数。</p>
+<p>如果符合上面条件的整数 <span class="arithmatex">\(q\)</span> 不存在，则说 <span class="arithmatex">\(b\)</span> 不整除 <span class="arithmatex">\(a\)</span>，记作 <span class="arithmatex">\(b\nmid a\)</span>.</p>
+<h4 id="12">1.2 整除的基本性质</h4>
+<p>整除的定义很好理解，关键是整除性质的理解和使用。</p>
+<p>我们先来看一下整除有哪些<strong>基本性质</strong>：</p>
+<div class="admonition example">
+<p class="admonition-title">整除的基本性质</p>
+<ol>
+<li>如果 <span class="arithmatex">\(c\mid b\)</span>，<span class="arithmatex">\(b\mid a\)</span>，则 <span class="arithmatex">\(c\mid a\)</span>.（传递性）</li>
+<li>如果 <span class="arithmatex">\(b\mid a\)</span>，则 <span class="arithmatex">\(cb\mid ca\)</span>.</li>
+<li>如果 <span class="arithmatex">\(c\mid a,\ c\mid b\)</span>，则对 <span class="arithmatex">\(\forall m,n\in\Bbb Z\)</span>，有 <span class="arithmatex">\(c\mid ma+nb\)</span>.</li>
+<li>如果 <span class="arithmatex">\(b\mid a\)</span> 且 <span class="arithmatex">\(a\not=0\)</span>，则 <span class="arithmatex">\(|b|\leq |a|\)</span>.</li>
+<li>如果 <span class="arithmatex">\(cb\mid ca\)</span>，<span class="arithmatex">\(c\not=0\)</span>，则 <span class="arithmatex">\(b\mid a\)</span>.</li>
+<li>如果 <span class="arithmatex">\(b\mid a\)</span>，<span class="arithmatex">\(a\not=0\)</span>，则 <span class="arithmatex">\(\frac{a}{b}\mid a\)</span>.</li>
+<li>如果 <span class="arithmatex">\(c\mid a+b,\ c\mid a\)</span>，则 <span class="arithmatex">\(c\mid b\)</span>.</li>
+</ol>
+<hr />
+<p>由(2.)和(5.)可得：如果 <span class="arithmatex">\(c\not=0\)</span>，则 <span class="arithmatex">\(b\mid a\Leftrightarrow cb\mid ca\)</span>.</p>
+</div>
+<p>利用整除的定义，很容易证明这些性质，证明过程简要了解就可以了。</p>
+<details class="question">
+<summary>如何证明整除的基本性质？</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:7"><input checked="checked" id="性质1" name="__tabbed_7" type="radio" /><input id="性质2" name="__tabbed_7" type="radio" /><input id="性质3" name="__tabbed_7" type="radio" /><input id="性质4" name="__tabbed_7" type="radio" /><input id="性质5" name="__tabbed_7" type="radio" /><input id="性质6" name="__tabbed_7" type="radio" /><input id="性质7" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="性质1">性质1</label><label for="性质2">性质2</label><label for="性质3">性质3</label><label for="性质4">性质4</label><label for="性质5">性质5</label><label for="性质6">性质6</label><label for="性质7">性质7</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><span class="arithmatex">\(c\mid b\Rightarrow b=cq_{1}\)</span></p>
+<p><span class="arithmatex">\(b\mid a\Rightarrow a=bq_{2}\)</span></p>
+<p><span class="arithmatex">\(\therefore a=cq_{1}q_{2}\)</span></p>
+<p><span class="arithmatex">\(c\not=0\)</span></p>
+<p><span class="arithmatex">\(\therefore c\mid a\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(b\mid a\Rightarrow a=bq\Rightarrow ca=cbq\)</span></p>
+<p><span class="arithmatex">\(b\not=0,\ c\not=0\Rightarrow cb\not= 0\)</span></p>
+<p><span class="arithmatex">\(\therefore cb\mid ca\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(c\mid a\Rightarrow a=cq_{1}\)</span></p>
+<p><span class="arithmatex">\(c\mid b\Rightarrow b=cq_{2}\)</span></p>
+<p><span class="arithmatex">\(ma+nb=mcq_{1}+ncq_{2}=c(mq_{1}+nq_{2})\)</span></p>
+<p><span class="arithmatex">\(\therefore c\mid ma+nb\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(b\mid a\Rightarrow a=bq,\ b\not=0,\ q\in\Bbb Z\)</span></p>
+<p><span class="arithmatex">\(a\not=0,\ b\not=0,\ q\in\Bbb Z\Rightarrow q\not=0\Rightarrow |q|\geq 1\Rightarrow \cfrac{|a|}{|b|}\geq 1\)</span></p>
+<p><span class="arithmatex">\(\therefore |b|\leq |a|\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(cb\mid ca,\ c\not=0,\ b\not=0\Rightarrow ca=cbq,\ c\not=0,\ b\not=0\Rightarrow a=bq,\ b\not=0\)</span></p>
+<p><span class="arithmatex">\(\therefore b\mid a\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(b\mid a,\ a\not=0\Rightarrow a=bq\Rightarrow a=(\cfrac{a}{b})b,\ \cfrac{a}{b}\not=0,\ q=\cfrac{a}{b}\in\Bbb Z,\ b\in\Bbb Z\)</span></p>
+<p><span class="arithmatex">\(\therefore \cfrac{a}{b}\mid a\)</span></p>
+</div>
+<div class="tabbed-block">
+<p><span class="arithmatex">\(c\mid a+b,\ c\mid a\Rightarrow a+b=mc,\ a=nc\Rightarrow b=(m-n)c,\ (m-n)\in\Bbb Z\)</span></p>
+<p><span class="arithmatex">\(\therefore c\mid b\)</span></p>
+</div>
+</div>
+</div>
+</details>
+<p>下面，我们通过一些习题，了解一下本节中证明题的解法，主要应用前面介绍的整除的基本性质。</p>
+<details class="note" open="open">
+<summary>习题 3.</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:3"><input checked="checked" id="题目_3" name="__tabbed_8" type="radio" /><input id="思路_3" name="__tabbed_8" type="radio" /><input id="解答_3" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="题目_3">题目</label><label for="思路_3">思路</label><label for="解答_3">解答</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>证明：若 <span class="arithmatex">\(m-p\mid (mn+qp)\)</span>，则 <span class="arithmatex">\(m-p\mid (mq+np)\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>在这类“给定了一部分整除条件，要证明一个整除结论”的题目中，<strong>性质 3</strong> 的应用是常见的。</p>
+<p>性质 3：如果 <span class="arithmatex">\(c\mid a,\ c\mid b\)</span>，则对 <span class="arithmatex">\(\forall m,n\in\Bbb Z\)</span>，有 <span class="arithmatex">\(c\mid ma+nb\)</span>.</p>
+<p>对于这道题目而言，要证明 <span class="arithmatex">\(m-p\mid (mq+np)\)</span>，并且给出了 <span class="arithmatex">\(m-p\mid (mn+qp)\)</span> 这个条件，问题的关键就转化为：<strong>找到 <span class="arithmatex">\(m-p\)</span> 的另一个倍数</strong>。</p>
+<p>观察 <span class="arithmatex">\(mn+qp\)</span> 和 <span class="arithmatex">\(mq+np\)</span>，容易发现<strong>二者作差</strong>可以得到另一个倍数，从而问题得解。</p>
+</div>
+<div class="tabbed-block">
+<p>证明：</p>
+<p><span class="arithmatex">\((mn+qp)-(mq+np)=mn-mq+qp-np=m(n-q)-p(n-q)=(m-p)(n-q)\)</span></p>
+<p>要证：<span class="arithmatex">\(m-p\mid (mq+np)\)</span></p>
+<p>只需证：<span class="arithmatex">\(m-p\mid (mn+qp)-(m-p)(n-q)\)</span></p>
+<p>又由：<span class="arithmatex">\(m-p\mid (mn+qp)\)</span>，<span class="arithmatex">\(m-p\mid (m-p)(n-q)\)</span></p>
+<p><span class="arithmatex">\(\therefore m-p\mid (mn+qp)-(m-p)(n-q)\)</span>（性质 3）</p>
+<p>即：<span class="arithmatex">\(m-p\mid (mq+np)\)</span></p>
+<p>证毕。</p>
+</div>
+</div>
+</div>
+</details>
+<p>在“习题 3.”中，我们找到了性质 3“如果 <span class="arithmatex">\(c\mid a,\ c\mid b\)</span>，则对 <span class="arithmatex">\(\forall m,n\in\Bbb Z\)</span>，有 <span class="arithmatex">\(c\mid ma+nb\)</span>”，所需条件中的 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>，并通过作差，确定了此性质中的 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 在本题中的值分别为 1 和 -1.</p>
+<p>还有一类题目会给出所需条件中的 <span class="arithmatex">\(a\)</span> 和 <span class="arithmatex">\(b\)</span>，但性质中的 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 需要设法构造，例如：“习题 4*.”。</p>
+<details class="tip" open="open">
+<summary>习题 4*.</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:3"><input checked="checked" id="题目_4" name="__tabbed_9" type="radio" /><input id="思路_4" name="__tabbed_9" type="radio" /><input id="解答_4" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="题目_4">题目</label><label for="思路_4">思路</label><label for="解答_4">解答</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>证明：若 <span class="arithmatex">\(p\mid (10a-b)\)</span> 和 <span class="arithmatex">\(p\mid (10c-d)\)</span>，则 <span class="arithmatex">\(p\mid (ad-bc)\)</span>.</p>
+</div>
+<div class="tabbed-block">
+<p>看到题目的样式，可以想到使用性质 3；又因为已经给出了 <span class="arithmatex">\(p\)</span> 的两个倍数，证明的关键转化为：</p>
+<p>找到性质 3“如果 <span class="arithmatex">\(c\mid a,\ c\mid b\)</span>，则对 <span class="arithmatex">\(\forall m,n\in\Bbb Z\)</span>，有 <span class="arithmatex">\(c\mid \color{red}{m}\color{black}{a+}\color{red}{n}\color{black}{b}\)</span>”中的 <span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 的值。</p>
+<p>思考一下，<span class="arithmatex">\(m\)</span> 和 <span class="arithmatex">\(n\)</span> 分别是多少的时候，最容易消除 <span class="arithmatex">\((10a-b)\)</span> 和 <span class="arithmatex">\((10c-d)\)</span> 中数字 10 产生的影响，得到我们需要的 <span class="arithmatex">\((ad-bc)\)</span> 呢？</p>
+</div>
+<div class="tabbed-block">
+<p>证明：</p>
+<p><span class="arithmatex">\(ad-bc=(10a-b)\color{red}{c}\color{black}{+(10c-d)}\color{red}{(-a)}\)</span></p>
+<p>又由：<span class="arithmatex">\(p\mid (10a-b)\)</span>，<span class="arithmatex">\(p\mid (10c-d)\)</span></p>
+<p>可得：<span class="arithmatex">\(p\mid (ad-bc)\)</span></p>
+<p>证毕。</p>
+</div>
+</div>
+</div>
+</details>
+<h4 id="13">1.3 整除的两个定理</h4>
+<p>下面，我们再了解一下整除的两个定理，它们分别对于证明和计算，是可能有帮助的。</p>
+<div class="admonition example">
+<p class="admonition-title">定理 1</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:1"><input checked="checked" id="定理" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="定理">定理</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+</div>
+<p>设 <span class="arithmatex">\(a,b\in\Bbb Z\)</span>，其中 <span class="arithmatex">\(b\gt 0\)</span>，则唯一 <span class="arithmatex">\(\exists q,r\in\Bbb Z\)</span>，满足下式：<span class="arithmatex">\(a=bq+r,\ 0\leq r\lt b\)</span>.</p>
+<p>其中:</p>
+<p><span class="arithmatex">\(q\)</span> 称为 <span class="arithmatex">\(a\)</span> 被 <span class="arithmatex">\(b\)</span> 除得到的<strong>不完全商</strong>；</p>
+<p><span class="arithmatex">\(r\)</span> 称为 <span class="arithmatex">\(a\)</span> 被 <span class="arithmatex">\(b\)</span> 除所得到的<strong>余数</strong>（或非负最小剩余），记作 <span class="arithmatex">\(a\ mod\ b=r\)</span>，《数论讲义》中记为 <span class="arithmatex">\(&lt;a&gt;_{b}=r\)</span>. 。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ChestnutSilver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

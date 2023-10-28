@@ -1,0 +1,1922 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.7">
+    
+    
+      
+        <title>机器学习 - TJIS My Helloworld</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4b4a2bd9.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="TJIS My Helloworld" class="md-header__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TJIS My Helloworld
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              机器学习
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="lime"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to My Helloworld
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../page2/" class="md-tabs__link">
+        
+  
+    
+  
+  Page test
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全原理
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-tabs__link">
+        
+  
+    
+  
+  信息安全数学基础
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-tabs__link">
+        
+  
+    
+  
+  机器学习理论与应用
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-tabs__link">
+        
+  
+    
+  
+  脑认知与智能计算
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-tabs__link">
+        
+  
+    
+  
+  计算机取证
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-tabs__link">
+          
+  
+  机器学习
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="TJIS My Helloworld" class="md-nav__button md-logo" aria-label="TJIS My Helloworld" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    TJIS My Helloworld
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to My Helloworld
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../page2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Page test
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E5%8E%9F%E7%90%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全原理
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    信息安全数学基础
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%EF%BC%88%E6%97%81%E5%90%AC%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    机器学习理论与应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%84%91%E8%AE%A4%E7%9F%A5%E4%B8%8E%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    脑认知与智能计算
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计算机取证
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            机器学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Chapter%208.%20%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8. 集成学习
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    机器学习
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-2" class="md-nav__link">
+    Chapter 2. 线性回归
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 2. 线性回归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 线性回归模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 多项式回归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 最小二乘法线性回归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 评价标准
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-4" class="md-nav__link">
+    Chapter 4. 决策树
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 4. 决策树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 划分选择
+  </a>
+  
+    <nav class="md-nav" aria-label="2. 划分选择">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21" class="md-nav__link">
+    2.1 信息增益
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 信息增益">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211" class="md-nav__link">
+    2.1.1 算法原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212" class="md-nav__link">
+    2.1.2 具体算例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22" class="md-nav__link">
+    2.2 增益率
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 增益率">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221" class="md-nav__link">
+    2.2.1 算法原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222" class="md-nav__link">
+    2.2.2 具体算例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23" class="md-nav__link">
+    2.3 基尼指数
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 基尼指数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231" class="md-nav__link">
+    2.3.1 算法原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    2.3.2 具体算例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3. 剪枝
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 剪枝">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 预剪枝
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 后剪枝
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4. 连续与缺失值
+  </a>
+  
+    <nav class="md-nav" aria-label="4. 连续与缺失值">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 连续值处理
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 连续值处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#411" class="md-nav__link">
+    4.1.1 算法原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#412" class="md-nav__link">
+    4.1.2 具体算例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 缺失值处理
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 缺失值处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421" class="md-nav__link">
+    4.2.1 算法原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422" class="md-nav__link">
+    4.2.2 具体算例
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 多变量决策树
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 多变量决策树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51" class="md-nav__link">
+    5.1 算法目标
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52" class="md-nav__link">
+    5.2 主要算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 增量学习
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chapter-5" class="md-nav__link">
+    Chapter 5. 神经网络
+  </a>
+  
+    <nav class="md-nav" aria-label="Chapter 5. 神经网络">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1. 动机
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2. 神经元模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3. 感知机与多层网络
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    4. 神经网络的标准结构
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="_1">机器学习</h1>
+<hr />
+<div class="admonition danger">
+<p class="admonition-title">正在更新……</p>
+<p>本笔记随课更新。</p>
+<p>2023-2024学年度秋季学期。</p>
+</div>
+<hr />
+<h2 id="chapter-2">Chapter 2. 线性回归</h2>
+<h3 id="1">1. 线性回归模型</h3>
+<div class="arithmatex">\[f_{\theta}(x)=\theta_1x_1+\theta_2x_2+…+\theta_nx_n\]</div>
+<p><strong>单变量线性回归：</strong></p>
+<p>对于 <span class="arithmatex">\(f_{\theta}(x)=\theta_1x+\theta_0\)</span>，线性回归就退化为一条直线。</p>
+<p>使用<strong>梯度下降法</strong>来确定一个抛物线（抛物面）的最低点，通过迭代更新，直到收敛（每次变化的大小趋近于一个很小的数，这个数字可以自己确定）找到要确定的 <span class="arithmatex">\(\theta\)</span> 的值。</p>
+<p>显然，对于 <span class="arithmatex">\(f_{\theta}(x)=\theta_1x_1+\theta_2x_2+\theta_0\)</span>，就不再是一个线性函数；这时，模型具有两个特征。</p>
+<p>在有多个 <span class="arithmatex">\(\theta\)</span> 时，它们在迭代时应该同步更新。</p>
+<p>线性回归的损失函数是凸函数，线性回归模型不存在<strong>局部最小值</strong>。</p>
+<p><strong>多变量线性回归：</strong></p>
+<p>考虑多变量线性回归中可能存在的变量方差不一的问题，它会导致抛物面的形状过于扁，此时，使用梯度下降方法可能导致在一个变量下降，而另一个变量震荡。</p>
+<p>我们希望抛物面的形状趋近于标准圆的形状，因此，我们需要统一变量的尺度。这称为<strong>特征归一化</strong>。</p>
+<p>特征归一化的方法有很多，但它们的目的都是把不同的特征统一到相似的尺度当中，它们的效果是相近的。</p>
+<p>从另一个思路优化算法，既然特征的尺度不一致，我们可以考虑调整不同特征的学习率。例如：<strong>自适应的学习率</strong>，我们可以调节不同特征，赋予不同的学习率。当然，自适应的学习率也有多种不同的算法。</p>
+<h3 id="2">2. 多项式回归</h3>
+<p>多项式回归可以拟合各种各样的函数，但是存在容易过拟合的问题。</p>
+<p>调节正则项系数有助于解决过拟合问题。</p>
+<h3 id="3">3. 最小二乘法线性回归</h3>
+<p>我们可以通过<strong>最小二乘法</strong>求解的方法，直接计算出 <span class="arithmatex">\(\theta\)</span> 的值。但是，它涉及到矩阵的求逆运算，计算复杂度是比较高的。</p>
+<p>对于梯度下降：</p>
+<ul>
+<li>需要选择学习率</li>
+<li>需要迭代很多次</li>
+<li>一般可以得到比较好的效果，即使特征维度很大</li>
+</ul>
+<p>对于最小二乘法：</p>
+<ul>
+<li>不需要选择学习率</li>
+<li>不需要迭代</li>
+<li>需要进行矩阵的求逆运算</li>
+<li>只适用于线性回归模型</li>
+<li>不适合复杂模型（特征维度较大）的求解</li>
+</ul>
+<h3 id="4">4. 评价标准</h3>
+<p>MSE 均方误差、RMSE 均方根误差、MAE 平均绝对误差、R-Squared R 方/决定系数</p>
+<p>具体选择哪个评价标准，和具体的学习任务有关，也可以综合取多个指标，评价模型的效果。</p>
+<h2 id="chapter-4">Chapter 4. 决策树</h2>
+<h3 id="1_1">1. 目标</h3>
+<p>决策树（decision tree）是常见的机器学习方法，我们可以使用决策树来完成一个<strong>分类</strong>任务。决策树学习的目的是为了产生一棵泛化能力强，即处理<strong>未见示例</strong>能力强的决策树。</p>
+<p>决策树的生成是一个递归过程，在决策树基本算法中，有三种情形会导致递归返回：</p>
+<ol>
+<li>当前结点包含的样本全属于同一类别，无需划分；</li>
+<li>当前属性集为空，或是所有样本在所有属性上的取值相同，无法划分；</li>
+<li>当前结点包含的样本集合为空，不能划分。</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">决策树学习的关键</p>
+<p>决策树学习的关键是：如何选择<strong>最优划分</strong>属性。</p>
+<p>一般而言，随着划分过程的不断进行，我们希望决策树的分支结点所包含的样本尽可能属于同一类别，即结点的“纯度”（purity）越来越高。</p>
+</div>
+<h3 id="2_1">2. 划分选择</h3>
+<p>根据选择最优划分属性方法的不同，我们可以了解一下三种基本的决策树算法：ID3、C4.5、CART，它们分别使用信息增益、增益率、基尼指数来计算属性划分所获得的“纯度提升”。</p>
+<p>接下来，我们将结合一组实例，分别介绍三种算法的原理和具体计算流程。</p>
+<p>数据实例：西瓜数据集</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>纹理</th>
+<th>脐部</th>
+<th>触感</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>4</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>6</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>7</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>8</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>9</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>10</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>清晰</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>11</td>
+<td>浅白</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>13</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>14</td>
+<td>浅白</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>15</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>16</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>17</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h4 id="21">2.1 信息增益</h4>
+<h5 id="211">2.1.1 算法原理</h5>
+<p>首先，使用“信息熵”（information entropy）来度量样本集合的纯度。</p>
+<p>假定当前样本集合 <span class="arithmatex">\(D\)</span> 中第 <span class="arithmatex">\(k\)</span> 类样本所占比例为 <span class="arithmatex">\(p_k(k=1,2,…,|\mathcal{Y}|)\)</span>，则 <span class="arithmatex">\(D\)</span> 的信息熵定义为：</p>
+<div class="arithmatex">\[ Ent(D)=-\sum\limits*{k=1}^{|\mathcal{Y}|}p_klog*{2}p_k\]</div>
+<blockquote>
+<ol>
+<li>计算信息熵时约定，若 <span class="arithmatex">\(p=0\)</span>，则 <span class="arithmatex">\(plog_{2}p=0\)</span>。</li>
+<li><span class="arithmatex">\(Ent(D)\)</span> 的最小值为 0，最大值为 <span class="arithmatex">\(log_{2}|\mathcal{Y}|\)</span>。</li>
+<li><span class="arithmatex">\(Ent(D)\)</span> 的值越小，则 <span class="arithmatex">\(D\)</span> 的纯度越高。</li>
+</ol>
+</blockquote>
+<p>下面介绍“信息增益”（information gain）的概念，这一概念的描述可能比较复杂，我们可以结合具体的计算实例来理解。</p>
+<p>假定离散属性 <span class="arithmatex">\(a\)</span> 有 <span class="arithmatex">\(V\)</span> 个可能的取值 <span class="arithmatex">\({a^1,a^2,…,a^V}\)</span>，若使用属性 <span class="arithmatex">\(a\)</span> 来对样本集 <span class="arithmatex">\(D\)</span> 进行划分，则会产生 <span class="arithmatex">\(V\)</span> 个分支结点，（显然，其中第 <span class="arithmatex">\(v\)</span> 个分支结点将包含 <span class="arithmatex">\(D\)</span> 中所有在属性 <span class="arithmatex">\(a\)</span> 上取值为 <span class="arithmatex">\(a^v\)</span> 的样本），记为 <span class="arithmatex">\(D^v\)</span>。我们分别计算出 <span class="arithmatex">\(D^v\)</span> 的信息熵，给各个分支结点赋予权重 <span class="arithmatex">\(\dfrac{|D^v|}{|D|}\)</span>，（即样本数越多的分支节点的影响越大）。于是，我们就可以计算出用属性 <span class="arithmatex">\(a\)</span> 对样本集 <span class="arithmatex">\(D\)</span> 进行划分所获得的“信息增益”。</p>
+<div class="arithmatex">\[Gain(D,a)=Ent(D)-\sum\limits^{V}_{v=1}\dfrac{|D^v|}{|D|}Ent(D^v)\]</div>
+<p>其中，公式前一项为未划分时的信息增益，后一项为每个子树的信息增益乘以权重的和，权重的意义是使样本数多的子节点更重要。</p>
+<p>信息增益用来描述一次划分之后纯度的提升有多大。</p>
+<p>一般而言，信息增益越大，“纯度提升”越大。我们可以用信息增益来选择决策树的划分属性。</p>
+<div class="arithmatex">\[a_*=\mathop {argmax}\limits_{a\in A}Gain(D,a)\]</div>
+<p><strong>ID3 决策树</strong>算法使用信息增益选择划分属性。</p>
+<h5 id="212">2.1.2 具体算例</h5>
+<p>以“西瓜数据集”为例：</p>
+<p><span class="arithmatex">\(\vert\mathcal{Y}\vert=2\)</span>，<span class="arithmatex">\(p_1=\dfrac{8}{17}\)</span>，<span class="arithmatex">\(p_2=\dfrac{9}{17}\)</span></p>
+<p>根节点信息熵：</p>
+<div class="arithmatex">\[Ent(D)=-\sum\limits^2_{k=1}p_klog_{2}p_k=-(\dfrac{8}{17}log_{2}\dfrac{8}{17}+\dfrac{9}{17}log_{2}\dfrac{9}{17})=0.998\]</div>
+<p>若以属性“色泽”划分，<span class="arithmatex">\(D^1(色泽=青绿)\)</span>，<span class="arithmatex">\(D^2(色泽=乌黑)\)</span>，<span class="arithmatex">\(D^3(色泽=浅白)\)</span></p>
+<p>由此，三个分支结点的信息熵：</p>
+<div class="arithmatex">\[Ent(D^1)=-(\dfrac{3}{6}log_{2}\dfrac{3}{6}+\dfrac{3}{6}log_{2}\dfrac{3}{6})=1.000\]</div>
+<div class="arithmatex">\[Ent(D^2)=-(\dfrac{4}{6}log_{2}\dfrac{4}{6}+\dfrac{2}{6}log_{2}\dfrac{2}{6})=0.918\]</div>
+<div class="arithmatex">\[Ent(D^3)=-(\dfrac{1}{5}log_{2}\dfrac{1}{5}+\dfrac{4}{5}log_{2}\dfrac{4}{5})=0.722\]</div>
+<p>属性“色泽”的信息增益：</p>
+<div class="arithmatex">\[Gain(D,色泽)=Ent(D)-\sum\limits^3_{v=1}\dfrac{|D^v|}{|D|}Ent(D^v)=0.998-(\dfrac{6}{17}\times1.000+\dfrac{6}{17}\times0.918+\dfrac{5}{17}\times0.722)=0.109\]</div>
+<p>类似地，计算其他属性的信息增益：</p>
+<div class="arithmatex">\[Gain(D,根蒂)=0.143;\quad Gain(D,敲声)=0.141\]</div>
+<div class="arithmatex">\[Gain(D,纹理)=0.381;\quad Gain(D,脐部)=0.289\]</div>
+<div class="arithmatex">\[Gain(D,触感)=0.006\]</div>
+<p>属性“纹理”的信息增益最大，因此它被选为划分属性。</p>
+<p>基于“纹理”对根节点的划分结果：</p>
+<div class="arithmatex">\[
+纹理 = \begin{cases}{\{1,2,3,4,5,6,8,10,15\}}\quad \text {if {清晰}}  \\
+{\{7,9,13,14,17\}}\quad \text{if {稍糊}}\\
+{\{11,12,16\}} \quad\text{if {模糊}}
+\end{cases}
+\]</div>
+<p>然后，对每个分支结点做进一步划分，以第一个分支结点 <span class="arithmatex">\(D^1\)</span> 为例，基于 <span class="arithmatex">\(D^1\)</span> 计算各属性的信息增益：</p>
+<div class="arithmatex">\[Gain(D,色泽)=0.043;\quad Gain(D,根蒂)=0.458\]</div>
+<div class="arithmatex">\[Gain(D,敲声)=0.331;\quad Gain(D,脐部)=0.458\]</div>
+<div class="arithmatex">\[Gain(D,触感)=0.458\]</div>
+<p>“根蒂”、“脐部”、“触感” 3 个属性均取得了最大的信息增益，可任选其中之一作为划分属性；类似的，对每个分支结点进行上述操作。直到算法递归结束，得到最终的决策树。</p>
+<p><strong>速记：</strong>计算根节点信息熵 → 计算各分支节点信息熵 → 计算各个属性信息增益 → 选取最大信息增益作为划分属性</p>
+<h4 id="22">2.2 增益率</h4>
+<h5 id="221">2.2.1 算法原理</h5>
+<p>由于信息增益准则会对<strong>可取值数目</strong>较多的属性有所偏好，为了减少这种偏好可能带来的不利影响，<strong>C4.5 决策树</strong>算法不直接使用信息增益，而使用“增益率”（gain ratio）来选择最优划分属性。</p>
+<p>增益率定义为：</p>
+<div class="arithmatex">\[Gain\_raion(D,a)=\dfrac{Gain(D,a)}{IV(a)}\]</div>
+<p>其中，属性 <span class="arithmatex">\(a\)</span> 的“固有值”（intrinsic value）为：</p>
+<div class="arithmatex">\[IV(a)=-\sum\limits^V_{v=1}\dfrac{|D^v|}{|D|}log_{2}\dfrac{|D^v|}{|D|}\]</div>
+<p>属性 <span class="arithmatex">\(a\)</span> 的可能取值数目越多（即 <span class="arithmatex">\(V\)</span> 越大），则 <span class="arithmatex">\(IV(a)\)</span> 的值通常会越大。</p>
+<p>注意：</p>
+<p>信息率准则对可取值数目较少的属性有所偏好。因此，C4.5 算法不是直接选择增益率最大的候选划分属性，而是使用启发式：先从候选划分属性中选择信息增益高于平均水平的属性，再从中选择增益率最高的。</p>
+<h5 id="222">2.2.2 具体算例</h5>
+<p>以“西瓜数据集”为例：</p>
+<div class="arithmatex">\[IV(色泽)=-(\dfrac{6}{17}log_{2}\dfrac{6}{17}+\dfrac{6}{17}log_{2}\dfrac{6}{17}+\dfrac{5}{17}log_{2}\dfrac{5}{17})=-(-0.5304-0.5304-0.5193)=1.580\]</div>
+<div class="arithmatex">\[IV(根蒂)=-(\dfrac{8}{17}log_{2}\dfrac{8}{17}+\dfrac{7}{17}log_{2}\dfrac{7}{17}+\dfrac{2}{17}log_{2}\dfrac{2}{17})=-(-0.5117-0.5271-0.3633)=1.402\]</div>
+<div class="arithmatex">\[IV(敲声)=-(\dfrac{10}{17}log_{2}\dfrac{10}{17}+\dfrac{5}{17}log_{2}\dfrac{5}{17}+\dfrac{2}{17}log_{2}\dfrac{2}{17})=-(-0.4504-0.5193-0.3633)=1.333\]</div>
+<div class="arithmatex">\[IV(纹理)=-(\dfrac{9}{17}log_{2}\dfrac{9}{17}+\dfrac{5}{17}log_{2}\dfrac{5}{17}+\dfrac{3}{17}log_{2}\dfrac{3}{17})=-(-0.4858-0.5193-0.4416)=1.447\]</div>
+<div class="arithmatex">\[IV(脐部)=-(\dfrac{7}{17}log_{2}\dfrac{7}{17}+\dfrac{6}{17}log_{2}\dfrac{6}{17}+\dfrac{4}{17}log_{2}\dfrac{4}{17})=-(-0.5271-0.5304-0.4912)=1.549\]</div>
+<div class="arithmatex">\[IV(触感)=-(\dfrac{12}{17}log_{2}\dfrac{12}{17}+\dfrac{5}{17}log_{2}\dfrac{5}{17})=-(-0.3547-0.5193)=0.874\]</div>
+<div class="arithmatex">\[Gain(D,色泽)=0.109;\quad Gain(D,根蒂)=0.143\]</div>
+<div class="arithmatex">\[Gain(D,敲声)=0.141;\quad Gain(D,纹理)=0.381\]</div>
+<div class="arithmatex">\[Gain(D,脐部)=0.289;\quad Gain(D,触感)=0.006\]</div>
+<div class="arithmatex">\[\overline{Gain(D,a)}=\dfrac{0.109+0.143+0.141+0.381+0.289+0.006}{6}=0.178\]</div>
+<p>信息增益高于平均水平的属性：纹理、脐部</p>
+<div class="arithmatex">\[Gain\_ratio(D,纹理)=\dfrac{Gain(D,纹理)}{IV(纹理)}=\dfrac{0.381}{1.447}=0.263\]</div>
+<div class="arithmatex">\[Gain\_ratio(D,脐部)=\dfrac{Gain(D,脐部)}{IV(脐部)}=\dfrac{0.289}{1.549}=0.187\]</div>
+<p>选择增益率最高的“纹理”属性作为划分属性。</p>
+<p><strong>速记：</strong>计算根节点信息熵 → 计算各分支节点信息熵 → 计算各个属性信息增益 → 计算各个属性的固有值 → 计算各个属性的增益率 → 选取信息增益高于平均水平，并且增益率最高的属性作为划分属性</p>
+<h4 id="23">2.3 基尼指数</h4>
+<h5 id="231">2.3.1 算法原理</h5>
+<p>数据集 <span class="arithmatex">\(D\)</span> 的纯度可以用基尼值来度量：</p>
+<div class="arithmatex">\[Gini(D)=\sum\limits^{|\mathcal{Y}|}_{k=1}\sum\limits_{k'\neq k}p_kp_{k'}=1-\sum\limits^{|\mathcal{Y}|}_{k=1}p_k^2\]</div>
+<p><span class="arithmatex">\(Gini(D)\)</span> 反映了从数据集 <span class="arithmatex">\(D\)</span> 中随机抽取两个样本，其类别标记不一致的概率；<span class="arithmatex">\(Gini(D)\)</span> 越小，数据集 <span class="arithmatex">\(D\)</span> 的纯度越高。</p>
+<p>属性 <span class="arithmatex">\(a\)</span> 的“基尼指数”（Gini index）定义为：</p>
+<div class="arithmatex">\[Gini\_index(D,a)=\sum\limits^V_{v=1}\dfrac{|D^v|}{|D|}Gini(D^v)\]</div>
+<p>在候选属性集合 <span class="arithmatex">\(A\)</span> 中，选择使得划分后基尼指数最小的属性作为最优划分属性：</p>
+<div class="arithmatex">\[a_*=\mathop {argmin}\limits_{a\in A}Gini\_index(D,a)\]</div>
+<p><strong>CART 决策树</strong>使用“基尼指数”来选择划分属性。</p>
+<h5 id="232">2.3.2 具体算例</h5>
+<p>若以属性“色泽”划分，<span class="arithmatex">\(D^1(色泽=青绿)\)</span>，<span class="arithmatex">\(D^2(色泽=乌黑)\)</span>，<span class="arithmatex">\(D^3(色泽=浅白)\)</span></p>
+<p>由此，三个分支结点的基尼值：</p>
+<div class="arithmatex">\[Gini(D^1)=1-\Big(\Big(\dfrac{3}{6}\Big)^2+\Big(\dfrac{3}{6}\Big)^2\Big)=0.500\]</div>
+<div class="arithmatex">\[Gini(D^2)=1-\Big(\Big(\dfrac{4}{6}\Big)^2+\Big(\dfrac{2}{6}\Big)^2\Big)=0.444\]</div>
+<div class="arithmatex">\[Gini(D^3)=1-\Big(\Big(\dfrac{1}{5}\Big)^2+\Big(\dfrac{4}{5}\Big)^2\Big)=0.320\]</div>
+<p>属性“色泽”的基尼指数：</p>
+<div class="arithmatex">\[Gini\_index(D,色泽)=\dfrac{6}{17}\times0.500+\dfrac{6}{17}\times0.444+\dfrac{5}{17}\times0.320=0.427\]</div>
+<p>类似地，计算其他属性的基尼指数：</p>
+<div class="arithmatex">\[Gini\_index(D,根蒂)=0.422;\quad Gini\_index(D,敲声)=0.424\]</div>
+<div class="arithmatex">\[Gini\_index(D,纹理)=0.277;\quad Gini\_index(D,脐部)=0.344\]</div>
+<div class="arithmatex">\[Gini\_index(D,触感)=0.494\]</div>
+<p>选择基尼指数最小的“纹理”属性作为划分属性。</p>
+<p><strong>速记：</strong>计算各分支节点基尼值 → 计算各个属性基尼指数 → 选取基尼指数最小的属性作为划分属性</p>
+<h3 id="3_1">3. 剪枝</h3>
+<p>剪枝（pruning）是决策树算法防止“过拟合”的主要手段。主要分为“预剪枝”（prepruning）和“后剪枝”（post-pruning）两种。</p>
+<p>判断决策树的泛化性能，可以使用留出法，即预留一部分数据用作“验证集”以进行性能评估。此时，未剪枝决策树将基于<strong>训练集</strong>构建，而泛化性能将基于<strong>验证集</strong>中的准确率来衡量。</p>
+<h4 id="31">3.1 预剪枝</h4>
+<p>预剪枝是指在决策树生成过程中，在<strong>每个结点划分前</strong>先进行估计，若当前节点划分不能带来决策树<strong>泛化性能提升</strong>，则停止划分当前结点，并将当前节点标记为叶节点，其类别标记为结点中训练样例数最多的类别。</p>
+<p>预剪枝使得决策树的很多分支都没有“展开”，这不仅降低了过拟合的风险，还显著减少了决策树的训练时间开销和测试时间开销。<strong>但另一方面</strong>，有些分支的当前划分虽不能提升泛化性能、甚至可能导致泛化性能暂时下降，但在其基础上进行的后续划分却有可能导致性能显著提高；预剪枝基于“贪心”本质禁止这些分支展开，给预剪枝决策树带来了欠拟合的风险。</p>
+<h4 id="32">3.2 后剪枝</h4>
+<p>后剪枝是指先从训练集生成一棵完整的决策树，然后<strong>自底向上</strong>地对<strong>非叶结点</strong>进行考察，若将该结点对应的子树替换为叶节点能带来决策树泛化性能提升，则将该子树替换为叶节点。</p>
+<p>后剪枝决策树通常比预剪枝决策树保留了<strong>更多的分支</strong>。一般情形下，后剪枝决策树的欠拟合风险很小，泛化性能往往优于预剪枝决策树。但后剪枝过程是在生成完全决策树之后进行的，并且要自底向上地对树中所有非叶结点进行<strong>逐一</strong>考察，因此其<strong>训练时间开销</strong>比未剪枝决策树和预剪枝决策树都要大得多。</p>
+<h3 id="4_1">4. 连续与缺失值</h3>
+<h4 id="41">4.1 连续值处理</h4>
+<p>我们有必要讨论一下如何在决策树学习中使用<strong>连续属性</strong>。</p>
+<p>首先，我们更新一下数据集，以便讨论连续属性。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>纹理</th>
+<th>脐部</th>
+<th>触感</th>
+<th>密度</th>
+<th>含糖率</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.697</td>
+<td>0.460</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.774</td>
+<td>0.376</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.634</td>
+<td>0.264</td>
+<td>是</td>
+</tr>
+<tr>
+<td>4</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.608</td>
+<td>0.318</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.556</td>
+<td>0.215</td>
+<td>是</td>
+</tr>
+<tr>
+<td>6</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>0.403</td>
+<td>0.237</td>
+<td>是</td>
+</tr>
+<tr>
+<td>7</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>0.481</td>
+<td>0.149</td>
+<td>是</td>
+</tr>
+<tr>
+<td>8</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>0.437</td>
+<td>0.211</td>
+<td>是</td>
+</tr>
+<tr>
+<td>9</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>0.666</td>
+<td>0.091</td>
+<td>否</td>
+</tr>
+<tr>
+<td>10</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>清晰</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>0.243</td>
+<td>0.267</td>
+<td>否</td>
+</tr>
+<tr>
+<td>11</td>
+<td>浅白</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>0.245</td>
+<td>0.057</td>
+<td>否</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>0.343</td>
+<td>0.099</td>
+<td>否</td>
+</tr>
+<tr>
+<td>13</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.639</td>
+<td>0.161</td>
+<td>否</td>
+</tr>
+<tr>
+<td>14</td>
+<td>浅白</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>0.657</td>
+<td>0.198</td>
+<td>否</td>
+</tr>
+<tr>
+<td>15</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>0.360</td>
+<td>0.370</td>
+<td>否</td>
+</tr>
+<tr>
+<td>16</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>0.593</td>
+<td>0.042</td>
+<td>否</td>
+</tr>
+<tr>
+<td>17</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>0.719</td>
+<td>0.103</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h5 id="411">4.1.1 算法原理</h5>
+<p>由于连续属性的可取值数目不再有限，因此，不能直接根据连续属性的可取值来对结点进行划分。</p>
+<p>此时，<strong>连续属性离散化技术</strong>可派上用场。</p>
+<p>最简单的策略是采用<strong>二分法</strong>（bi-partition）对连续属性进行处理，这也是 C4.5 决策树算法中采用的机制。</p>
+<p>下面介绍二分法的具体流程，同样地，这一概念的描述可能比较复杂，但我们仍可以结合具体的计算实例来理解。</p>
+<p>给定样本集 <span class="arithmatex">\(D\)</span> 和连续属性 <span class="arithmatex">\(a\)</span>，假定 <span class="arithmatex">\(a\)</span> 在 <span class="arithmatex">\(D\)</span> 上出现了 <span class="arithmatex">\(n\)</span> 个不同的取值，将这些值<strong>从小到大</strong>进行排序，记为<span class="arithmatex">\(\{a^1,a^2,…,a^n\}\)</span>。基于<strong>划分点</strong> t 可将 <span class="arithmatex">\(D\)</span> 分为子集 <span class="arithmatex">\(D_t^-\)</span> 和 <span class="arithmatex">\(D_t^+\)</span>，其中 <span class="arithmatex">\(D_t^-\)</span> 包含那些在属性 <span class="arithmatex">\(a\)</span> 上取值不大于 <span class="arithmatex">\(t\)</span> 的样本，而 <span class="arithmatex">\(D_t^+\)</span> 则包含那些在属性 <span class="arithmatex">\(a\)</span> 上取值大于 <span class="arithmatex">\(t\)</span> 的样本。显然，对<strong>相邻</strong>的属性取值 <span class="arithmatex">\(a^i\)</span> 与 <span class="arithmatex">\(a^{i+1}\)</span> 来说，<span class="arithmatex">\(t\)</span> 在区间 <span class="arithmatex">\([a^i,a^{i+1})\)</span> 中取任意值所产生的划分结果相同。因此，对连续属性 <span class="arithmatex">\(a\)</span>，我们可考察各个包含 <span class="arithmatex">\(n-1\)</span> 个元素的<strong>候选划分点集合</strong>，即把区间 <span class="arithmatex">\([a^i,a^{i+1})\)</span> 的中位点 <span class="arithmatex">\(\dfrac{a^i+a^{i+1}}{2}\)</span> 作为候选划分点。</p>
+<p>候选划分点集合：</p>
+<div class="arithmatex">\[T_a=\Big\{\dfrac{a^i+a^{i+1}}{2}\mid1\leq i\leq n-1\Big\}\]</div>
+<p>然后，像考察离散属性值一样来考察这些划分点，选取最优的划分点进行样本集合的划分。</p>
+<div class="arithmatex">\[Gain(D,a)=\mathop{max}\limits_{t\in T_a}\ Gain(D,a,t)=\mathop{max}\limits_{t\in T_a}\ Ent(D)-\sum\limits_{\lambda\in\{-,+\}}\dfrac{|D_t^{\lambda}|}{|D|}Ent(D_t^{\lambda})\]</div>
+<p>其中，<span class="arithmatex">\(Gain(D,a,t)\)</span> 是样本集 <span class="arithmatex">\(D\)</span> 基于划分点 <span class="arithmatex">\(t\)</span> 二分后的信息增益。于是，我们就可选择使 <span class="arithmatex">\(Gain(D,a,t)\)</span> 最大化的划分点。</p>
+<h5 id="412">4.1.2 具体算例</h5>
+<p>对于属性“密度”，在决策树学习开始时，根节点包含 17 个训练样本在该属性上取值均不同。</p>
+<p>属性“密度”的候选划分点集合包含 16 个候选值：</p>
+<div class="arithmatex">\[T_{密度}=\{0.244,0.294,0.351,0.381,0.420,0.459,0.518,0.574,0.600,0.621,0.636,0.648,0.661,0.681,0.708,0.746\}\]</div>
+<p>逐个计算各个候选划分点的信息增益，得到最优划分点：0.381</p>
+<p>若以 0.381 划分，两个分支结点的信息熵：</p>
+<div class="arithmatex">\[Ent(D_{0.381}^-)=-(0+\dfrac{4}{4}log_{2}\dfrac{4}{4})=0\]</div>
+<div class="arithmatex">\[Ent(D_{0.381}^+)=-(\dfrac{8}{13}log_{2}\dfrac{8}{13}+\dfrac{5}{13}log_{2}\dfrac{5}{13})=-(-0.431-0.530)=0.961\]</div>
+<p>属性“密度”的信息增益：</p>
+<div class="arithmatex">\[Gain(D,密度)=-(\dfrac{8}{17}log_{2}\dfrac{8}{17}+\dfrac{9}{17}log_{2}\dfrac{9}{17})-(\dfrac{4}{17}\times 0+\dfrac{13}{17}\times 0.961)=0.998-0.735=0.263\]</div>
+<p>同样地，对于属性“含糖率”，候选划分点集合也包含 16 个候选值，最优划分点 0.126，信息增益 0.349。</p>
+<p>综上：</p>
+<div class="arithmatex">\[Gain(D,色泽)=0.109;\quad Gain(D,根蒂)=0.143\]</div>
+<div class="arithmatex">\[Gain(D,敲声)=0.141;\quad Gain(D,纹理)=0.381\]</div>
+<div class="arithmatex">\[Gain(D,脐部)=0.289;\quad Gain(D,触感)=0.006\]</div>
+<div class="arithmatex">\[Gain(D,密度)=0.262;\quad Gain(D,含糖率)=0.349\]</div>
+<p>于是，“纹理”被选作根节点划分属性，此后结点划分过程递归进行。</p>
+<p>需要注意的是，与离散属性不同，若当前结点划分属性为连续属性，该属性<strong>还可</strong>作为其<strong>后代结点</strong>的划分属性。</p>
+<h4 id="42">4.2 缺失值处理</h4>
+<p>我们需要解决两个问题：</p>
+<p>（1）如何在属性值缺失的情况下进行划分属性选择？</p>
+<p>（2）给定划分属性，若样本在该属性上的值缺失，如何对样本进行划分？</p>
+<p>同样地，我们更新一下数据集，使其产生一些缺失值，其余的值同第 2 节中的表格。</p>
+<table>
+<thead>
+<tr>
+<th>编号</th>
+<th>色泽</th>
+<th>根蒂</th>
+<th>敲声</th>
+<th>纹理</th>
+<th>脐部</th>
+<th>触感</th>
+<th>好瓜</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>-</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>2</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>-</td>
+<td>是</td>
+</tr>
+<tr>
+<td>3</td>
+<td>乌黑</td>
+<td>蜷缩</td>
+<td>-</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>4</td>
+<td>青绿</td>
+<td>蜷缩</td>
+<td>沉闷</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>5</td>
+<td>-</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>6</td>
+<td>青绿</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>-</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>7</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>软粘</td>
+<td>是</td>
+</tr>
+<tr>
+<td>8</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>-</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>是</td>
+</tr>
+<tr>
+<td>9</td>
+<td>乌黑</td>
+<td>-</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>10</td>
+<td>青绿</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>-</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>11</td>
+<td>浅白</td>
+<td>硬挺</td>
+<td>清脆</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>-</td>
+<td>否</td>
+</tr>
+<tr>
+<td>12</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>-</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>13</td>
+<td>-</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>14</td>
+<td>浅白</td>
+<td>稍蜷</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>凹陷</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>15</td>
+<td>乌黑</td>
+<td>稍蜷</td>
+<td>浊响</td>
+<td>清晰</td>
+<td>-</td>
+<td>软粘</td>
+<td>否</td>
+</tr>
+<tr>
+<td>16</td>
+<td>浅白</td>
+<td>蜷缩</td>
+<td>浊响</td>
+<td>模糊</td>
+<td>平坦</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+<tr>
+<td>17</td>
+<td>青绿</td>
+<td>-</td>
+<td>沉闷</td>
+<td>稍糊</td>
+<td>稍凹</td>
+<td>硬滑</td>
+<td>否</td>
+</tr>
+</tbody>
+</table>
+<h5 id="421">4.2.1 算法原理</h5>
+<p>给定训练集 <span class="arithmatex">\(D\)</span> 和属性 <span class="arithmatex">\(a\)</span>，令 <span class="arithmatex">\(\tilde{D}\)</span> 表示 <span class="arithmatex">\(D\)</span> 中在属性 <span class="arithmatex">\(a\)</span> 上<strong>没有缺失值的样本子集</strong>。对于问题（1），显然我们仅可根据 <span class="arithmatex">\(\tilde{D}\)</span> 来判断属性 <span class="arithmatex">\(a\)</span> 的优劣。</p>
+<p>假定属性 <span class="arithmatex">\(a\)</span> 有 <span class="arithmatex">\(V\)</span> 个可取值 <span class="arithmatex">\(\{a^1,a^2,…,a^V\}\)</span>，令 <span class="arithmatex">\(\tilde{D}^v\)</span> 表示 <span class="arithmatex">\(\tilde{D}\)</span> 在<strong>属性</strong> <span class="arithmatex">\(a\)</span> 上取值为 <span class="arithmatex">\(a^v\)</span> 的样本子集，<span class="arithmatex">\(\tilde{D}^k\)</span> 表示 <span class="arithmatex">\(\tilde{D}\)</span> 中属于第 <span class="arithmatex">\(k\)</span> <strong>类</strong>（<span class="arithmatex">\(k=1,2,…,|\mathcal{Y}|\)</span>）的样本子集，则显然有 <span class="arithmatex">\(\tilde{D}=\cup_{k=1}^{|\mathcal{Y}|}\tilde{D}_k\)</span>，<span class="arithmatex">\(\tilde{D}=\cup_{v=1}^{V}\tilde{D}^v\)</span>。</p>
+<p>假定我们为每个样本 <span class="arithmatex">\(x\)</span> <strong>赋予一个初始权重</strong> <span class="arithmatex">\(w_x\)</span>，在决策树学习开始阶段，根节点中各样本的权重初始化为 1，并定义：</p>
+<div class="arithmatex">\[\rho=\dfrac{\sum_{x\in\tilde{D}}w_x}{\sum_{x\in D}w_x}\]</div>
+<div class="arithmatex">\[\tilde{p}_k=\dfrac{\sum_{x\in\tilde{D}_k}w_x}{\sum_{x\in D}w_x}\quad(1\leq k\leq |\mathcal{Y}|)\]</div>
+<div class="arithmatex">\[\tilde{r}_v=\dfrac{\sum_{x\in\tilde{D}^v}w_x}{\sum_{x\in D}w_x}\quad(1\leq v\leq V)\]</div>
+<p><strong>直观地看</strong>，对属性 <span class="arithmatex">\(a\)</span>，<span class="arithmatex">\(\rho\)</span> 表示<strong>无缺失值样本所占的比例</strong>，<span class="arithmatex">\(\tilde{p}_k\)</span> 表示无缺失值样本中第 <span class="arithmatex">\(k\)</span> 类所占的比例，<span class="arithmatex">\(\tilde{r}_v\)</span> 表示无缺失值样本中在属性 <span class="arithmatex">\(a\)</span> 上取值 <span class="arithmatex">\(a^v\)</span> 的样本所占的比例。显然，<span class="arithmatex">\(\sum\limits_{k=1}^{|\mathcal{Y}|}\tilde{p}_k=1\)</span>，<span class="arithmatex">\(\sum\limits_{v=1}^{V}\tilde{r}_v=1\)</span>。</p>
+<p>基于上述定义，信息熵的计算式：</p>
+<div class="arithmatex">\[Ent(\tilde{D})=-\sum\limits_{k=1}^{|\mathcal{Y}|}\tilde{p}_klog_{2}\tilde{p}_k\]</div>
+<p>信息增益的计算式推广为：</p>
+<div class="arithmatex">\[Gain(D,a)=\rho\times Gain(\tilde{D},a)=\rho\times\Big(Ent(\tilde{D})-\sum\limits_{v=1}^{|\mathcal{Y}|}\tilde{r}_vEnt(\tilde{D}^v)\Big)\]</div>
+<p>对于问题（2），若样本 <span class="arithmatex">\(x\)</span> 在划分属性 <span class="arithmatex">\(a\)</span> 上的取值<strong>已知</strong>，则将 <span class="arithmatex">\(x\)</span> 划入与其取值对应的子结点，且样本权值在子结点中保持为 <span class="arithmatex">\(w_x\)</span>；若样本 <span class="arithmatex">\(x\)</span> 在划分属性 <span class="arithmatex">\(a\)</span> 上的取值<strong>未知</strong>，则将 <span class="arithmatex">\(x\)</span> <strong>同时划入</strong>所有子结点，且样本权值在与属性值 <span class="arithmatex">\(a^v\)</span> 对应的子节点中调整为 <span class="arithmatex">\(\tilde{r}_v\cdot w_x\)</span>。<strong>直观地看</strong>，这就是让同一个样本以不同的概率划入到不同的子结点中去。</p>
+<h5 id="422">4.2.2 具体算例</h5>
+<p>在学习开始时，根节点包含样本集 <span class="arithmatex">\(D\)</span> 中全部 17 个样例，且个样例的权值均为 1。</p>
+<p><strong>以属性“色泽”为例：</strong></p>
+<p>在该属性上，无缺失值的样例子集 <span class="arithmatex">\(\tilde{D}\)</span> 包含编号：<span class="arithmatex">\(\{2,3,4,6,7,8,9,10,11,12,14,15,16,17\}\)</span> 共 14 个样例。</p>
+<p><span class="arithmatex">\(\tilde{D}\)</span> 的信息熵：</p>
+<div class="arithmatex">\[Ent(\tilde{D})=-\sum\limits_{k=1}^{2}\tilde{p}_{k}log_{2}\tilde{p}_{k}=-\Big(\dfrac{6}{14}log_{2}\dfrac{6}{14}+\dfrac{8}{14}log_{2}\dfrac{8}{14}\Big)=0.985\]</div>
+<p>令 <span class="arithmatex">\(\tilde{D}^1\)</span>，<span class="arithmatex">\(\tilde{D}^2\)</span> 与 <span class="arithmatex">\(\tilde{D}^3\)</span> 分别表示在属性“色泽”上取值为“青绿”“乌黑”以及“浅白”的样本子集，计算各样本子集的信息熵：</p>
+<div class="arithmatex">\[Ent({\tilde{D}^1})=-\Big(\dfrac{2}{4}log_{2}\dfrac{2}{4}+\dfrac{2}{4}log_{2}\dfrac{2}{4}\Big)=1.000\]</div>
+<div class="arithmatex">\[Ent({\tilde{D}^2})=-\Big(\dfrac{4}{6}log_{2}\dfrac{4}{6}+\dfrac{2}{6}log_{2}\dfrac{2}{6}\Big)=0.918\]</div>
+<div class="arithmatex">\[Ent({\tilde{D}^3})=-\Big(\dfrac{0}{4}log_{2}\dfrac{0}{4}+\dfrac{4}{4}log_{2}\dfrac{4}{4}\Big)=0.000\]</div>
+<p><strong>样本子集</strong> <span class="arithmatex">\(\tilde{D}\)</span> 在属性“色泽”的信息增益：</p>
+<div class="arithmatex">\[Gain(\tilde{D},色泽)=Ent(\tilde{D})-\sum\limits_{v=1}^{3}\tilde{r}_{v}Ent(\tilde{D}^v)=0.985-\Big(\dfrac{4}{14}\times1.000+\dfrac{6}{14}\times0.918+\dfrac{4}{14}\times0.000\Big)=0.306\]</div>
+<p><strong>样本集</strong> <span class="arithmatex">\(D\)</span> 在属性“色泽”的信息增益：</p>
+<div class="arithmatex">\[Gain(D,色泽)=\rho\times Gain(\tilde{D},色泽)=\dfrac{14}{17}\times 0.306=0.252\]</div>
+<p>所有属性在 <span class="arithmatex">\(D\)</span> 上的信息增益：</p>
+<div class="arithmatex">\[Gain(D,色泽)=0.252;\quad Gain(D,根蒂)=0.171\]</div>
+<div class="arithmatex">\[Gain(D,敲声)=0.145;\quad Gain(D,纹理)=0.424\]</div>
+<div class="arithmatex">\[Gain(D,脐部)=0.289;\quad Gain(D,触感)=0.006\]</div>
+<p>属性“纹理”取得了最大的信息增益，被用于对根节点进行划分，划分结果是：</p>
+<p>编号为 <span class="arithmatex">\(\{1,2,3,4,5,6,15\}\)</span> 的样本进入“纹理=清晰”分支，样本在子结点中的权重保持为 1；</p>
+<p>编号为 <span class="arithmatex">\(\{7,9,13,14,17\}\)</span> 的样本进入“纹理=稍糊”分支，样本在子结点中的权重保持为 1；</p>
+<p>编号为 <span class="arithmatex">\(\{11,12,16\}\)</span> 的样本进入“纹理=模糊”分支，样本在子结点中的权重保持为 1；</p>
+<p>编号为 <span class="arithmatex">\(\{8,10\}\)</span> 的样本在属性“纹理”出现缺失值，同时进入三个分支，样本在三个子结点中的权重分别调整为 <span class="arithmatex">\(\dfrac{7}{15}\)</span>、<span class="arithmatex">\(\dfrac{5}{15}\)</span> 和 <span class="arithmatex">\(\dfrac{3}{15}\)</span>。</p>
+<p><strong>速记：</strong>计算根节点无缺失值样本子集信息熵 → 计算各分支节点无缺失值样本子集信息熵 → 计算各个属性样本子集信息增益 →→ 计算各个属性样本集信息增益 → 选取最大信息增益作为划分属性 → 更新样本在子结点中的权重</p>
+<h3 id="5">5. 多变量决策树</h3>
+<h4 id="51">5.1 算法目标</h4>
+<p>若把每个属性视为坐标空间中的一个坐标轴，则 <span class="arithmatex">\(d\)</span> 个属性描述的样本就构成了 <span class="arithmatex">\(d\)</span> 维空间中的一个数据点，对样本分类则意味着在这个坐标空间中寻找不同类样本之间的<strong>分类边界</strong>。</p>
+<p>单变量决策树（univariate decision tree）所形成的分类边界是<strong>轴平行</strong>（axis-parallel）的，它的分类边界由若干个与坐标轴平行的分段组成。这样的分类边界使得学习结果由较好的可解释性；但在真实分类边界比较复杂时，必须使用很多段划分才能获得较好的近似，决策树会相当复杂，预测时间开销会很大。</p>
+<p>多变量决策树（multivariate decision tree）能够实现<strong>斜的划分边界</strong>，甚至能够实现更复杂的划分，从而简化决策树模型。此时，非叶结点不再是仅对某个属性，而是对<strong>属性的线性组合</strong>进行测试；换言之，每个非叶结点是一个形如 <span class="arithmatex">\(\sum\limits_{i=1}^{d}w_{i}a_{i}=t\)</span> 的分类器，其中 <span class="arithmatex">\(w_{i}\)</span> 是属性 <span class="arithmatex">\(a_{i}\)</span> 的权重，<span class="arithmatex">\(w_{i}\)</span> 和 <span class="arithmatex">\(t\)</span> 可在该节点所含的样本集和属性集上学得。</p>
+<p>多变量决策树的学习过程中，不是为每个非叶结点寻找一个最优划分属性，而是试图<strong>建立一个合适的线性分类器</strong>。举例来看，分类条件不再是形似 “<span class="arithmatex">\(含糖率\leq 0.126?\)</span>”，而是形似 “<span class="arithmatex">\(-0.800\times 密度-0.044\times 含糖率\leq 0.313?\)</span>” 的形式。</p>
+<h4 id="52">5.2 主要算法</h4>
+<p>多变量决策树的算法主要有 OC1 和一系列引入了线性分类器学习的最小二乘法算法。</p>
+<p>OC1 先贪心地寻找每个属性的最优权值，在局部优化的基础上再对分类边界进行随机扰动以试图找到更好地边界。</p>
+<p>还有一些算法试图在决策树的叶节点上嵌入神经网络，例如“感知机树”在决策树的每个叶节点上训练一个感知机；还有算法直接在叶节点上嵌入多层神经网络。</p>
+<h3 id="6">6. 增量学习</h3>
+<p>有一些决策树算法可以进行“增量学习”（incremental learning），即在接收到新样本后可对已学得的模型进行调整，而不用完全重新学习；主要机制是通过调整分支路径上的划分属性次序来对树进行部分重构，代表性算法有 ID4、ID5R、ITI 等。</p>
+<p>增量学习可有效降低每次接收到新样本后的训练时间开销，但多步增量学习后的模型会与基于全部数据训练而得的模型有较大差别。</p>
+<h2 id="chapter-5">Chapter 5. 神经网络</h2>
+<h3 id="1_2">1. 动机</h3>
+<p>例子：图像识别中的目标检测，在处理非线性问题中，前面介绍的模型存在困难。此外，例如“异或”XOR 问题就是一个非线性问题。</p>
+<p>大脑解决问题，并不会给每一个特定领域的问题写一个专门的算法，而是有一个通用的方法应用在遇到的各种问题中。</p>
+<h3 id="2_2">2. 神经元模型</h3>
+<p>“M-P 神经元模型”。</p>
+<h3 id="3_2">3. 感知机与多层网络</h3>
+<p>一般地，给定训练数据集，权重 <span class="arithmatex">\(w_i\)</span> 以及阈值 <span class="arithmatex">\(\theta\)</span> 可以通过学习得到。</p>
+<p>但是，感知机只有输出层神经元进行激活函数处理，即只拥有一层功能神经元，其学习能力非常有限。事实上，如果两类模式是<strong>线性可分</strong>的，即存在一个线性超平面能将它们分开，则感知机的学习过程一定会收敛，从而求得适当的权向量；否则，感知机的学习过程将会发生震荡。</p>
+<p>但是，感知机不能解决非线性可分问题。</p>
+<p>要解决非线性可分问题，需要考虑使用多层功能神经元。例如，简单的两层感知机就能解决异或问题。</p>
+<p>对于<strong>激活函数</strong>的选择，sigmoid 函数虽然连续，非线性，易于计算；但是，在层数更多的情形下，会导致梯度消失问题。</p>
+<h3 id="4_2">4. 神经网络的标准结构</h3>
+<p>包括输入层、隐藏层（代表了网络用来学习中间的结果）、输出层。</p>
+<p>在神经网络中，我们关心在各个神经元中的<strong>权重</strong>。</p>
+<p>在给定一个神经网络结构时，其实就相当于确定了一个函数集。</p>
+<p>在全连接前馈神经网络中，使用 sigmoid 函数作为激活函数。</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2023 <a href="https://github.com/ChestnutSilver"  target="_blank" rel="noopener">ChestnutSilver</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ChestnutSilver" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
